@@ -18,9 +18,9 @@ const standaloneAdapter = `
   window.__INITIAL_RECORDS__ = ${JSON.stringify(records)};
 </script>
 <script>
-  // LocalStorage Standalone Adapter for GitHub Pages / Offline
+  // LocalStorage Standalone Adapter for GitHub Pages / Offline Preview
   (function() {
-    const STORAGE_KEY = 'initiative_dashboard_v3_store';
+    const STORAGE_KEY = 'initiative_dashboard_v4_store';
     function getStore() {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (!stored) {
@@ -92,7 +92,9 @@ const standaloneAdapter = `
             (r.contact && r.contact.toLowerCase().includes(q)) ||
             (r.address && r.address.toLowerCase().includes(q)) ||
             (r.initiative && r.initiative.toLowerCase().includes(q)) ||
-            (r.voter && r.voter.toLowerCase() === q)
+            (r.busStand && r.busStand.toLowerCase().includes(q)) ||
+            (r.details && r.details.toLowerCase().includes(q)) ||
+            (r.preferredFriday && r.preferredFriday.toLowerCase().includes(q))
           );
         }
 
@@ -108,36 +110,23 @@ const standaloneAdapter = `
           return 0;
         });
 
-        // Handle POST / PUT / DELETE
-        if (options && options.method === 'POST') {
+        // Handle PUT (Update record)
+        if (options && options.method === 'PUT') {
+          const match = urlStr.match(/\\/api\\/records\\/([^?]+)/);
+          const updateId = match ? match[1] : null;
           const body = JSON.parse(options.body);
-          const newRecord = {
-            id: 'rec_' + Date.now(),
-            name: body.name,
-            contact: body.contact,
-            address: body.address,
-            initiative: body.initiative,
-            voter: body.voter || 'No',
-            createdAt: new Date().toISOString()
-          };
           const all = getStore();
-          all.unshift(newRecord);
-          // Re-evaluate duplicates
-          const phoneMap = {};
-          all.forEach(r => {
-            const p = (r.contact || '').replace(/[^0-9]/g, '');
-            if (p && p.length >= 7) phoneMap[p] = (phoneMap[p] || 0) + 1;
-          });
-          all.forEach(r => {
-            const p = (r.contact || '').replace(/[^0-9]/g, '');
-            if (phoneMap[p] > 1) {
-              r.isDuplicate = true;
-              r.duplicateFields = ['contact'];
-              r.duplicateReasons = ['Duplicate Phone: ' + r.contact];
-            }
-          });
-          saveStore(all);
-          return { ok: true, json: async () => ({ success: true, record: newRecord }) };
+          const target = all.find(r => r.id === updateId);
+          if (target) {
+            if (body.name) target.name = body.name;
+            if (body.contact) target.contact = body.contact;
+            if (body.address) target.address = body.address;
+            if (body.busStand !== undefined) target.busStand = body.busStand;
+            if (body.details !== undefined) target.details = body.details;
+            if (body.initiative) target.initiative = body.initiative;
+            saveStore(all);
+            return { ok: true, json: async () => ({ success: true, record: target }) };
+          }
         }
 
         return {

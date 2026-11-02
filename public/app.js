@@ -1,4 +1,4 @@
-// Initiative Central Dashboard - Frontend Logic (Phone-Only Duplicate Detection & No Empty Records)
+// Initiative Central Dashboard - Frontend Logic (Phone-Only Duplicate Detection & Clean Navigation)
 
 document.addEventListener('DOMContentLoaded', () => {
   // Application State
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sortOrder: 'desc',
     currentPage: 1,
     pageSize: 10,
-    deleteTargetId: null,
     isEditing: false
   };
 
@@ -33,6 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevPageBtn = document.getElementById('prevPageBtn');
   const nextPageBtn = document.getElementById('nextPageBtn');
   const pageNumbers = document.getElementById('pageNumbers');
+
+  // Homepage Navigation Links
+  const brandHomeLink = document.getElementById('brandHomeLink');
+  const homeNavBtn = document.getElementById('homeNavBtn');
+  const modalHomeBreadcrumb = document.getElementById('modalHomeBreadcrumb');
+  const modalHomeBtn = document.getElementById('modalHomeBtn');
 
   // Stats Counters
   const statTotalCount = document.getElementById('statTotalCount');
@@ -59,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formName = document.getElementById('formName');
   const formContact = document.getElementById('formContact');
   const formAddress = document.getElementById('formAddress');
+  const formDetails = document.getElementById('formDetails');
   const formInitiative = document.getElementById('formInitiative');
 
   // Buttons
@@ -116,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Fetch Records with current filter, search & sort (Excluding empty contacts)
+  // Fetch Records with current filter, search & sort
   async function fetchRecords() {
     try {
       const params = new URLSearchParams({
@@ -203,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // HTML Escape helper
   function escapeHtml(str) {
     if (!str) return '';
-    return str
+    return String(str)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
@@ -211,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/'/g, '&#039;');
   }
 
-  // Render Table Rows with Pagination & Phone-Only Duplicate Highlighting
+  // Render Table Rows with Pagination, Modified Headers & Phone-Only Duplicate Highlighting
   function renderTable() {
     tableBody.innerHTML = '';
 
@@ -247,11 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const initials = getInitials(rec.name);
       const isPhoneDup = rec.isDuplicate && rec.duplicateFields && rec.duplicateFields.includes('contact');
 
-      // Contact cell with Phone-Only Duplicate Highlight
+      // Contact cell with Phone Duplicate Highlight
       let contactHtml = '';
       if (isPhoneDup) {
         contactHtml = `
-          <div class="dup-contact-box" title="⚠️ Duplicate Phone Number: ${escapeHtml(rec.contact)}">
+          <div class="dup-contact-box" title="Duplicate Phone Number: ${escapeHtml(rec.contact)}">
             <i class="fa-solid fa-triangle-exclamation"></i>
             <span>${escapeHtml(rec.contact)}</span>
           </div>
@@ -285,11 +291,9 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      // Voter badge
-      const voterVal = rec.voter === 'Yes' ? 'Yes' : 'No';
-      const voterBadgeHtml = voterVal === 'Yes' 
-        ? `<span class="voter-badge voter-yes"><i class="fa-solid fa-check"></i> Yes</span>`
-        : `<span class="voter-badge voter-no">No</span>`;
+      // Details / Bus Stand column
+      const detailsTitle = rec.busStand || rec.details || (rec.initiative === 'Khatu Shyam' ? 'Bus Stand Not Set' : 'Standard Delivery');
+      const subDetail = rec.preferredFriday ? `<div class="details-secondary"><i class="fa-regular fa-calendar"></i> ${escapeHtml(rec.preferredFriday)}</div>` : '';
 
       tr.innerHTML = `
         <td>
@@ -298,7 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>
           <div class="member-info">
             <span class="member-name">${escapeHtml(rec.name)}</span>
-            <span class="member-id">${rec.id}</span>
+            <div class="member-meta">
+              <span class="member-id">${rec.id}</span>
+              ${rec.age ? `<span class="meta-tag">${escapeHtml(rec.age)} yrs</span>` : ''}
+              ${rec.gender ? `<span class="meta-tag">${escapeHtml(rec.gender)}</span>` : ''}
+            </div>
           </div>
         </td>
         <td>
@@ -312,7 +320,16 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>
           <div class="address-cell">
             <i class="fa-solid fa-location-dot address-icon"></i>
-            <span>${escapeHtml(rec.address)}</span>
+            <span>${escapeHtml(rec.address || 'Noida')}</span>
+          </div>
+        </td>
+        <td>
+          <div class="details-cell">
+            <div class="details-primary">
+              <i class="fa-solid ${rec.initiative === 'Khatu Shyam' ? 'fa-bus' : 'fa-box'}" style="font-size: 11px; color: var(--text-muted);"></i>
+              <span>${escapeHtml(detailsTitle)}</span>
+            </div>
+            ${subDetail}
           </div>
         </td>
         <td>
@@ -329,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </td>
         <td style="text-align: right;">
           <div class="action-buttons">
-            <button class="btn-icon edit" data-id="${rec.id}" title="Edit Member">
+            <button class="btn-icon edit" data-id="${rec.id}" title="Edit Member Details">
               <i class="fa-solid fa-pen-to-square"></i>
             </button>
           </div>
@@ -349,53 +366,72 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render Page Number Buttons
   function renderPageNumbers(totalPages) {
     pageNumbers.innerHTML = '';
-    const maxButtons = 5;
-    let startPage = Math.max(1, state.currentPage - Math.floor(maxButtons / 2));
-    let endPage = Math.min(totalPages, startPage + maxButtons - 1);
-    if (endPage - startPage < maxButtons - 1) {
-      startPage = Math.max(1, endPage - maxButtons + 1);
+
+    if (totalPages <= 1) return;
+
+    let pagesToRender = [];
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pagesToRender.push(i);
+    } else {
+      pagesToRender.push(1);
+      if (state.currentPage > 3) pagesToRender.push('...');
+      const start = Math.max(2, state.currentPage - 1);
+      const end = Math.min(totalPages - 1, state.currentPage + 1);
+      for (let i = start; i <= end; i++) {
+        if (!pagesToRender.includes(i)) pagesToRender.push(i);
+      }
+      if (state.currentPage < totalPages - 2) pagesToRender.push('...');
+      if (!pagesToRender.includes(totalPages)) pagesToRender.push(totalPages);
     }
 
-    for (let i = startPage; i <= endPage; i++) {
-      const btn = document.createElement('button');
-      btn.className = `page-num ${i === state.currentPage ? 'active' : ''}`;
-      btn.textContent = i;
-      btn.addEventListener('click', () => {
-        state.currentPage = i;
-        renderTable();
-      });
-      pageNumbers.appendChild(btn);
-    }
+    pagesToRender.forEach(p => {
+      if (p === '...') {
+        const span = document.createElement('span');
+        span.className = 'page-num ellipsis';
+        span.textContent = '...';
+        pageNumbers.appendChild(span);
+      } else {
+        const btn = document.createElement('button');
+        btn.className = `page-num ${p === state.currentPage ? 'active' : ''}`;
+        btn.textContent = p;
+        btn.addEventListener('click', () => {
+          state.currentPage = p;
+          renderTable();
+          window.scrollTo({ top: 300, behavior: 'smooth' });
+        });
+        pageNumbers.appendChild(btn);
+      }
+    });
   }
 
-  // Set Initiative Filter Function
+  // Filter Handling: Initiative
   function setInitiativeFilter(init) {
     state.selectedInitiative = init;
     initiativeFilter.value = init;
 
-    statCards.forEach(card => {
-      if (card.dataset.initiative === init) {
-        card.classList.add('active');
+    statCards.forEach(c => {
+      if (c.dataset.initiative === init) {
+        c.classList.add('active');
       } else {
-        card.classList.remove('active');
+        c.classList.remove('active');
       }
     });
 
     fetchRecords();
   }
 
-  // Event: Initiative Dropdown Change
+  // Event: Initiative Select Dropdown Changed
   initiativeFilter.addEventListener('change', (e) => {
     setInitiativeFilter(e.target.value);
   });
 
-  // Event: Duplicates Filter Change
+  // Event: Duplicate Select Dropdown Changed
   duplicateFilter.addEventListener('change', (e) => {
     state.duplicateFilter = e.target.value;
     fetchRecords();
   });
 
-  // Event: Click on any Stat Card
+  // Event: Stat Cards Clicked
   statCards.forEach(card => {
     card.addEventListener('click', () => {
       const init = card.dataset.initiative;
@@ -430,24 +466,42 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchRecords();
   });
 
-  // Reset Filters
+  // Reset Filters to Homepage State
   function resetAllFilters() {
     searchInput.value = '';
     state.searchQuery = '';
     clearSearchBtn.style.display = 'none';
     state.duplicateFilter = 'all';
     duplicateFilter.value = 'all';
+    state.sortBy = 'createdAt';
+    state.sortOrder = 'desc';
+    sortBySelect.value = 'createdAt_desc';
     setInitiativeFilter('All');
   }
 
   clearAllFiltersBtn.addEventListener('click', resetAllFilters);
   emptyStateResetBtn.addEventListener('click', resetAllFilters);
 
+  // Homepage Navigation / Redirection handlers
+  function navigateToHome(e) {
+    if (e) e.preventDefault();
+    closeModal();
+    resetAllFilters();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    showToast('Viewing Dashboard Homepage', 'info');
+  }
+
+  if (brandHomeLink) brandHomeLink.addEventListener('click', navigateToHome);
+  if (homeNavBtn) homeNavBtn.addEventListener('click', navigateToHome);
+  if (modalHomeBreadcrumb) modalHomeBreadcrumb.addEventListener('click', navigateToHome);
+  if (modalHomeBtn) modalHomeBtn.addEventListener('click', navigateToHome);
+
   // Pagination navigation
   prevPageBtn.addEventListener('click', () => {
     if (state.currentPage > 1) {
       state.currentPage--;
       renderTable();
+      window.scrollTo({ top: 300, behavior: 'smooth' });
     }
   });
 
@@ -456,10 +510,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.currentPage < totalPages) {
       state.currentPage++;
       renderTable();
+      window.scrollTo({ top: 300, behavior: 'smooth' });
     }
   });
 
-  // Table row actions delegation (copy, edit, delete)
+  // Table row actions delegation (copy, edit)
   tableBody.addEventListener('click', (e) => {
     const copyBtn = e.target.closest('.copy-btn');
     if (copyBtn) {
@@ -489,10 +544,13 @@ document.addEventListener('DOMContentLoaded', () => {
     saveBtnText.textContent = 'Update Record';
 
     recordIdInput.value = rec.id;
-    formName.value = rec.name;
-    formContact.value = rec.contact;
-    formAddress.value = rec.address;
-    formInitiative.value = rec.initiative;
+    formName.value = rec.name || '';
+    formContact.value = rec.contact || '';
+    formAddress.value = rec.address || '';
+    if (formDetails) {
+      formDetails.value = rec.busStand || rec.details || '';
+    }
+    formInitiative.value = rec.initiative || '';
 
     clearFormErrors();
     recordModal.classList.add('open');
@@ -528,6 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = formName.value.trim();
     const contact = formContact.value.trim();
     const address = formAddress.value.trim();
+    const details = formDetails ? formDetails.value.trim() : '';
     const initiative = formInitiative.value;
 
     let hasError = false;
@@ -550,7 +609,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hasError) return;
 
-    const payload = { name, contact, address, initiative };
+    const payload = {
+      name,
+      contact,
+      address,
+      busStand: details,
+      details,
+      initiative
+    };
     const id = recordIdInput.value;
 
     try {
@@ -584,7 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Reset Sample Data
   resetDataBtn.addEventListener('click', async () => {
-    if (!confirm('Reset all records back to default sample dataset?')) {
+    if (!confirm('Reset all records back to default dataset?')) {
       return;
     }
 
@@ -592,7 +658,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const res = await fetch('/api/reset', { method: 'POST' });
       const data = await res.json();
       if (data.success) {
-        showToast('Sample dataset restored successfully!', 'success');
+        showToast('Dataset restored successfully!', 'success');
         resetAllFilters();
         await fetchStats();
         await fetchRecords();

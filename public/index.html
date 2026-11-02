@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Initiative Management Dashboard</title>
+  <!-- Event Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='6' y='12' width='52' height='46' rx='10' fill='%23ffffff' stroke='%23e2e8f0' stroke-width='2'/><path d='M6 22 C6 14 10 12 16 12 L48 12 C54 12 58 14 58 22 L58 24 L6 24 Z' fill='%23dc2626'/><rect x='16' y='6' width='6' height='12' rx='3' fill='%2364748b'/><rect x='42' y='6' width='6' height='12' rx='3' fill='%2364748b'/><circle cx='18' cy='33' r='3' fill='%233b82f6'/><circle cx='32' cy='33' r='3' fill='%233b82f6'/><circle cx='46' cy='33' r='3' fill='%233b82f6'/><circle cx='18' cy='45' r='3' fill='%233b82f6'/><circle cx='32' cy='45' r='3.5' fill='%23f59e0b'/><path d='M46 40 L47.5 43.5 L51 44 L48.5 46.5 L49 50 L46 48 L43 50 L43.5 46.5 L41 44 L44.5 43.5 Z' fill='%23dc2626'/></svg>">
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,16 +19,21 @@
   <!-- Header / Navigation Bar -->
   <header class="navbar">
     <div class="nav-container">
-      <div class="brand">
+      <a href="/" class="brand-link" id="brandHomeLink" title="Go to Dashboard Homepage">
         <div class="brand-icon">
-          <i class="fa-solid fa-shapes"></i>
+          <i class="fa-solid fa-calendar-check"></i>
         </div>
         <div class="brand-text">
           <h1>Initiative Central</h1>
           <span class="subtext">Community, Distribution &amp; Event Portal</span>
         </div>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="btn-home-nav" id="homeNavBtn" title="Back to Homepage / Reset View">
+          <i class="fa-solid fa-house"></i>
+          <span>Homepage</span>
+        </a>
       </div>
-      <div class="header-actions"></div>
     </div>
   </header>
 
@@ -102,25 +110,25 @@
     <!-- Filter & Toolbar Section -->
     <section class="toolbar-card">
       <div class="toolbar-left">
-        <!-- Prominent Initiative Dropdown Filter -->
+        <!-- Prominent Initiative Dropdown Filter (NO EMOTES in options) -->
         <div class="filter-group">
           <label for="initiativeFilter" class="filter-label">
             <i class="fa-solid fa-filter"></i> Initiative:
           </label>
           <div class="select-wrapper">
             <select id="initiativeFilter" class="custom-select">
-              <option value="All">✨ All Initiatives</option>
-              <option value="Apne Apne Ram">🚩 1. Apne Apne Ram</option>
-              <option value="Diwali Event">🪔 2. Diwali Event</option>
-              <option value="Khatu Shyam">🙏 3. Khatu Shyam</option>
-              <option value="Sports Talent">🏆 4. Sports Talent</option>
-              <option value="Gift Distribution">🎁 5. Gift Distribution</option>
+              <option value="All">All Initiatives</option>
+              <option value="Apne Apne Ram">1. Apne Apne Ram</option>
+              <option value="Diwali Event">2. Diwali Event</option>
+              <option value="Khatu Shyam">3. Khatu Shyam</option>
+              <option value="Sports Talent">4. Sports Talent</option>
+              <option value="Gift Distribution">5. Gift Distribution</option>
             </select>
             <i class="fa-solid fa-chevron-down select-chevron"></i>
           </div>
         </div>
 
-        <!-- Duplicates Filter Dropdown -->
+        <!-- Duplicates Filter Dropdown (NO EMOTES in options) -->
         <div class="dup-filter-group">
           <label for="duplicateFilter" class="filter-label">
             <i class="fa-solid fa-triangle-exclamation"></i> Duplicates:
@@ -128,8 +136,8 @@
           <div class="select-wrapper">
             <select id="duplicateFilter" class="custom-select-dup">
               <option value="all">Show All Entries</option>
-              <option value="duplicates_only">⚠️ Duplicates Only</option>
-              <option value="unique_only">✅ Unique Only</option>
+              <option value="duplicates_only">Duplicates Only</option>
+              <option value="unique_only">Unique Only</option>
             </select>
             <i class="fa-solid fa-chevron-down select-chevron"></i>
           </div>
@@ -141,7 +149,7 @@
           <input 
             type="text" 
             id="searchInput" 
-            placeholder="Search Name, Phone, Address..." 
+            placeholder="Search Name, Phone, Address, Bus Stand..." 
             autocomplete="off"
           />
           <button id="clearSearchBtn" class="clear-search-btn" title="Clear Search">
@@ -182,7 +190,7 @@
       <div class="filter-tag">
         <span id="activeFilterText">Showing: All Initiatives</span>
         <span class="count-badge" id="resultsCountBadge">0 records</span>
-        <span class="count-badge" id="duplicatesCountBadge" style="background:#fee2e2; color:#b91c1c;">0 duplicates</span>
+        <span class="count-badge" id="duplicatesCountBadge" style="background:#fee2e2; color:#b91c1c;">0 duplicate phones</span>
       </div>
       <button id="clearAllFiltersBtn" class="link-btn" style="display: none;">Reset Filters</button>
     </div>
@@ -196,7 +204,8 @@
               <th style="width: 45px;">#</th>
               <th>Member Name</th>
               <th>Contact / Phone</th>
-              <th>Address</th>
+              <th>Residential Address</th>
+              <th>Bus Stand / Details</th>
               <th>Initiative</th>
               <th>Phone Duplicacy</th>
               <th>Date Added</th>
@@ -222,7 +231,7 @@
       <!-- Table Footer / Pagination -->
       <div class="table-footer">
         <div class="footer-info" id="paginationInfo">
-          Showing 1 to 10 of 13 entries
+          Showing 1 to 10 of 0 entries
         </div>
         <div class="pagination-controls">
           <button id="prevPageBtn" class="btn-page" disabled>
@@ -237,20 +246,29 @@
     </section>
   </main>
 
-  <!-- Add / Edit Member Modal -->
+  <!-- Edit Member Modal with Homepage Navigation & Breadcrumb -->
   <div class="modal-overlay" id="recordModal">
     <div class="modal-card">
       <div class="modal-header">
         <div class="modal-title-wrapper">
-          <div class="modal-icon">
-            <i class="fa-solid fa-user-plus" id="modalIcon"></i>
+          <div class="modal-breadcrumb">
+            <a href="/" class="modal-home-link" id="modalHomeBreadcrumb" title="Return to Dashboard Homepage">
+              <i class="fa-solid fa-house"></i> Home
+            </a>
+            <span class="crumb-separator">/</span>
+            <span id="modalCrumbTitle">Edit Member Details</span>
           </div>
-          <div>
-            <h2 id="modalTitle">Add New Member</h2>
-            <p class="modal-subtitle">Enter details to enroll into an initiative</p>
+          <div class="modal-title-row">
+            <div class="modal-icon">
+              <i class="fa-solid fa-user-pen" id="modalIcon"></i>
+            </div>
+            <div>
+              <h2 id="modalTitle">Edit Member Details</h2>
+              <p class="modal-subtitle">Update member information, address or initiative</p>
+            </div>
           </div>
         </div>
-        <button class="modal-close" id="closeModalBtn">&times;</button>
+        <button class="modal-close" id="closeModalBtn" title="Close">&times;</button>
       </div>
 
       <form id="recordForm" novalidate>
@@ -295,7 +313,7 @@
         <!-- Address Field -->
         <div class="form-group">
           <label for="formAddress" class="form-label">
-            Address <span class="required">*</span>
+            Residential Address <span class="required">*</span>
           </label>
           <div class="input-with-icon">
             <i class="fa-solid fa-location-dot input-icon"></i>
@@ -303,14 +321,30 @@
               type="text" 
               id="formAddress" 
               class="form-input" 
-              placeholder="e.g. Noida sector 101" 
+              placeholder="e.g. Village Sultanpur sector 128 Noida" 
               required
             />
           </div>
           <span class="field-error" id="addressError">Please enter a valid address</span>
         </div>
 
-        <!-- Initiative Dropdown Field (5 Initiatives) -->
+        <!-- Bus Stand / Details Field -->
+        <div class="form-group">
+          <label for="formDetails" class="form-label">
+            Bus Stand / Details
+          </label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-bus input-icon"></i>
+            <input 
+              type="text" 
+              id="formDetails" 
+              class="form-input" 
+              placeholder="e.g. Gejha Stand / Flat 102" 
+            />
+          </div>
+        </div>
+
+        <!-- Initiative Dropdown Field (5 Initiatives, NO EMOTES) -->
         <div class="form-group">
           <label for="formInitiative" class="form-label">
             Selected Initiative <span class="required">*</span>
@@ -318,19 +352,23 @@
           <div class="select-wrapper">
             <select id="formInitiative" class="form-select" required>
               <option value="" disabled selected>-- Select an Initiative --</option>
-              <option value="Apne Apne Ram">🚩 1. Apne Apne Ram</option>
-              <option value="Diwali Event">🪔 2. Diwali Event</option>
-              <option value="Khatu Shyam">🙏 3. Khatu Shyam</option>
-              <option value="Sports Talent">🏆 4. Sports Talent</option>
-              <option value="Gift Distribution">🎁 5. Gift Distribution</option>
+              <option value="Apne Apne Ram">1. Apne Apne Ram</option>
+              <option value="Diwali Event">2. Diwali Event</option>
+              <option value="Khatu Shyam">3. Khatu Shyam</option>
+              <option value="Sports Talent">4. Sports Talent</option>
+              <option value="Gift Distribution">5. Gift Distribution</option>
             </select>
             <i class="fa-solid fa-chevron-down select-chevron"></i>
           </div>
           <span class="field-error" id="initiativeError">Please select an initiative</span>
         </div>
 
-        <!-- Modal Actions -->
+        <!-- Modal Actions with Homepage Redirection -->
         <div class="modal-actions">
+          <a href="/" class="btn btn-outline" id="modalHomeBtn" title="Return to Dashboard Homepage">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard Home</span>
+          </a>
           <button type="button" class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
           <button type="submit" class="btn btn-primary" id="saveRecordBtn">
             <i class="fa-solid fa-check"></i>

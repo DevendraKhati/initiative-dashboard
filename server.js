@@ -160,7 +160,7 @@ app.get('/api/records', (req, res) => {
     records = records.filter(r => !r.isDuplicate);
   }
 
-  // Live text search across Name, Contact, Address, Voter
+  // Live text search across Name, Contact, Address, Initiative, Bus Stand, Details
   if (search && search.trim() !== '') {
     const q = search.trim().toLowerCase();
     records = records.filter(r =>
@@ -168,7 +168,9 @@ app.get('/api/records', (req, res) => {
       (r.contact && r.contact.toLowerCase().includes(q)) ||
       (r.address && r.address.toLowerCase().includes(q)) ||
       (r.initiative && r.initiative.toLowerCase().includes(q)) ||
-      (r.voter && r.voter.toLowerCase() === q)
+      (r.busStand && r.busStand.toLowerCase().includes(q)) ||
+      (r.details && r.details.toLowerCase().includes(q)) ||
+      (r.preferredFriday && r.preferredFriday.toLowerCase().includes(q))
     );
   }
 
@@ -241,7 +243,7 @@ app.post('/api/records', (req, res) => {
 // 5. Update Existing Record
 app.put('/api/records/:id', (req, res) => {
   const { id } = req.params;
-  const { name, contact, address, initiative, voter } = req.body;
+  const { name, contact, address, initiative, busStand, details } = req.body;
 
   let records = readRecords();
   const index = records.findIndex(r => r.id === id);
@@ -253,11 +255,10 @@ app.put('/api/records/:id', (req, res) => {
   if (name && name.trim()) records[index].name = name.trim();
   if (contact && contact.trim()) records[index].contact = contact.trim();
   if (address && address.trim()) records[index].address = address.trim();
+  if (busStand !== undefined) records[index].busStand = busStand.trim();
+  if (details !== undefined) records[index].details = details.trim();
   if (initiative && INITIATIVES.includes(initiative.trim())) {
     records[index].initiative = initiative.trim();
-  }
-  if (voter !== undefined) {
-    records[index].voter = (voter && voter.toLowerCase() === 'yes') ? 'Yes' : 'No';
   }
 
   records[index].updatedAt = new Date().toISOString();
@@ -298,7 +299,7 @@ app.post('/api/reset', (req, res) => {
     if (fs.existsSync(SEED_FILE)) {
       const seedData = fs.readFileSync(SEED_FILE, 'utf-8');
       fs.writeFileSync(DATA_FILE, seedData, 'utf-8');
-      res.json({ success: true, message: 'Data reset to default sample records' });
+      res.json({ success: true, message: 'Data reset to default dataset' });
     } else {
       res.status(500).json({ success: false, error: 'Seed file missing' });
     }
@@ -310,14 +311,17 @@ app.post('/api/reset', (req, res) => {
 // 8. Export CSV Endpoint
 app.get('/api/export/csv', (req, res) => {
   const records = readRecords();
-  const header = ['ID', 'Name', 'Contact', 'Address', 'Initiative', 'Voter', 'Phone Duplicate', 'Duplicate Reason', 'Created At'];
+  const header = ['ID', 'Name', 'Contact', 'Residential Address', 'Bus Stand / Details', 'Preferred Friday', 'Age', 'Gender', 'Initiative', 'Phone Duplicate', 'Duplicate Reason', 'Created At'];
   const rows = records.map(r => [
     `"${r.id}"`,
     `"${(r.name || '').replace(/"/g, '""')}"`,
     `"${(r.contact || '').replace(/"/g, '""')}"`,
     `"${(r.address || '').replace(/"/g, '""')}"`,
+    `"${(r.busStand || r.details || '').replace(/"/g, '""')}"`,
+    `"${(r.preferredFriday || '').replace(/"/g, '""')}"`,
+    `"${(r.age || '').replace(/"/g, '""')}"`,
+    `"${(r.gender || '').replace(/"/g, '""')}"`,
     `"${(r.initiative || '').replace(/"/g, '""')}"`,
-    `"${r.voter || 'No'}"`,
     `"${r.isDuplicate ? 'YES' : 'NO'}"`,
     `"${(r.duplicateReasons || []).join('; ').replace(/"/g, '""')}"`,
     `"${r.createdAt}"`
