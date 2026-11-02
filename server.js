@@ -10,18 +10,80 @@ const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'data', 'records.json');
 const SEED_FILE = path.join(__dirname, 'data', 'seed.json');
 
-// The 4 Core Initiatives specified by user
+// Core Initiatives (Now 5 including Gift Distribution)
 const INITIATIVES = [
   'Apne Apne Ram',
   'Diwali Event',
   'Khatu Shyam',
-  'Sports Talent'
+  'Sports Talent',
+  'Gift Distribution'
 ];
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Dynamic duplicate detection logic
+function computeDuplicates(records) {
+  const phoneMap = new Map();
+  const nameMap = new Map();
+  const exactMap = new Map();
+
+  records.forEach(r => {
+    const cleanPhone = (r.contact || '').replace(/[^0-9]/g, '');
+    const cleanName = (r.name || '').trim().toLowerCase();
+
+    if (cleanPhone && cleanPhone.length >= 7) {
+      if (!phoneMap.has(cleanPhone)) phoneMap.set(cleanPhone, []);
+      phoneMap.get(cleanPhone).push(r);
+    }
+
+    if (cleanName) {
+      if (!nameMap.has(cleanName)) nameMap.set(cleanName, []);
+      nameMap.get(cleanName).push(r);
+    }
+
+    const exactKey = cleanName + '||' + cleanPhone;
+    if (!exactMap.has(exactKey)) exactMap.set(exactKey, []);
+    exactMap.get(exactKey).push(r);
+  });
+
+  records.forEach(r => {
+    const cleanPhone = (r.contact || '').replace(/[^0-9]/g, '');
+    const cleanName = (r.name || '').trim().toLowerCase();
+    const exactKey = cleanName + '||' + cleanPhone;
+
+    const phoneMatches = (cleanPhone && cleanPhone.length >= 7) ? phoneMap.get(cleanPhone) : [];
+    const nameMatches = cleanName ? nameMap.get(cleanName) : [];
+    const exactMatches = exactMap.get(exactKey) || [];
+
+    const isExactDup = exactMatches.length > 1;
+    const isPhoneDup = phoneMatches.length > 1;
+    const isNameDup = nameMatches.length > 1;
+
+    r.isDuplicate = isExactDup || isPhoneDup || isNameDup;
+    r.duplicateFields = [];
+    r.duplicateReasons = [];
+
+    if (isExactDup) {
+      r.duplicateFields.push('exact', 'name', 'contact');
+      r.duplicateReasons.push(`Exact Duplicate: Name & Contact appears ${exactMatches.length} times`);
+    } else {
+      if (isPhoneDup) {
+        r.duplicateFields.push('contact');
+        const others = phoneMatches.filter(o => o.id !== r.id).map(o => o.name).slice(0, 2).join(', ');
+        r.duplicateReasons.push(`Duplicate Contact: ${r.contact} shared with ${others || (phoneMatches.length - 1) + ' others'}`);
+      }
+      if (isNameDup) {
+        r.duplicateFields.push('name');
+        r.duplicateReasons.push(`Duplicate Name: "${r.name}" appears ${nameMatches.length} times`);
+      }
+    }
+  });
+
+  return records;
+}
 
 // Helper to safely read records
 function readRecords() {
@@ -30,12 +92,13 @@ function readRecords() {
       if (fs.existsSync(SEED_FILE)) {
         const seedData = fs.readFileSync(SEED_FILE, 'utf-8');
         fs.writeFileSync(DATA_FILE, seedData, 'utf-8');
-        return JSON.parse(seedData);
+        return computeDuplicates(JSON.parse(seedData));
       }
       return [];
     }
     const raw = fs.readFileSync(DATA_FILE, 'utf-8');
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    return computeDuplicates(parsed);
   } catch (err) {
     console.error('Error reading records:', err);
     return [];
@@ -67,14 +130,19 @@ app.get('/api/initiatives', (req, res) => {
 app.get('/api/stats', (req, res) => {
   const records = readRecords();
   const byInitiative = {};
-  
+
   INITIATIVES.forEach(init => {
     byInitiative[init] = 0;
   });
 
+  let duplicateCount = 0;
+
   records.forEach(r => {
     if (byInitiative[r.initiative] !== undefined) {
       byInitiative[r.initiative]++;
+    }
+    if (r.isDuplicate) {
+      duplicateCount++;
     }
   });
 
@@ -82,29 +150,39 @@ app.get('/api/stats', (req, res) => {
     success: true,
     stats: {
       total: records.length,
-      byInitiative
+      byInitiative,
+      duplicateCount,
+      uniqueCount: records.length - duplicateCount
     }
   });
 });
 
-// 3. Get Records with Filter, Search, and Sort
+// 3. Get Records with Filter, Search, Duplicates Filter, and Sort
 app.get('/api/records', (req, res) => {
   let records = readRecords();
-  const { initiative, search, sortBy = 'createdAt', sortOrder = 'desc' } = req.query;
+  const { initiative, search, duplicateFilter = 'all', sortBy = 'createdAt', sortOrder = 'desc' } = req.query;
 
   // Filter by initiative
   if (initiative && initiative !== 'All' && INITIATIVES.includes(initiative)) {
     records = records.filter(r => r.initiative === initiative);
   }
 
-  // Live text search across Name, Contact, Address
+  // Filter by duplicate status
+  if (duplicateFilter === 'duplicates_only') {
+    records = records.filter(r => r.isDuplicate);
+  } else if (duplicateFilter === 'unique_only') {
+    records = records.filter(r => !r.isDuplicate);
+  }
+
+  // Live text search across Name, Contact, Address, Voter
   if (search && search.trim() !== '') {
     const q = search.trim().toLowerCase();
-    records = records.filter(r => 
+    records = records.filter(r =>
       (r.name && r.name.toLowerCase().includes(q)) ||
       (r.contact && r.contact.toLowerCase().includes(q)) ||
       (r.address && r.address.toLowerCase().includes(q)) ||
-      (r.initiative && r.initiative.toLowerCase().includes(q))
+      (r.initiative && r.initiative.toLowerCase().includes(q)) ||
+      (r.voter && r.voter.toLowerCase() === q)
     );
   }
 
@@ -132,7 +210,7 @@ app.get('/api/records', (req, res) => {
 
 // 4. Create New Record
 app.post('/api/records', (req, res) => {
-  const { name, contact, address, initiative } = req.body;
+  const { name, contact, address, initiative, voter = 'No' } = req.body;
 
   if (!name || !name.trim()) {
     return res.status(400).json({ success: false, error: 'Name is required' });
@@ -144,38 +222,42 @@ app.post('/api/records', (req, res) => {
     return res.status(400).json({ success: false, error: 'Address is required' });
   }
   if (!initiative || !INITIATIVES.includes(initiative.trim())) {
-    return res.status(400).json({ 
-      success: false, 
-      error: `Invalid initiative. Must be one of: ${INITIATIVES.join(', ')}` 
+    return res.status(400).json({
+      success: false,
+      error: `Invalid initiative. Must be one of: ${INITIATIVES.join(', ')}`
     });
   }
 
-  const records = readRecords();
+  let records = readRecords();
   const newRecord = {
     id: `rec_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
     name: name.trim(),
     contact: contact.trim(),
     address: address.trim(),
     initiative: initiative.trim(),
+    voter: (voter && voter.toLowerCase() === 'yes') ? 'Yes' : 'No',
     createdAt: new Date().toISOString()
   };
 
-  records.unshift(newRecord); // Add to beginning
+  records.unshift(newRecord);
+  records = computeDuplicates(records);
   writeRecords(records);
+
+  const savedRecord = records.find(r => r.id === newRecord.id);
 
   res.status(201).json({
     success: true,
     message: 'Record added successfully',
-    record: newRecord
+    record: savedRecord
   });
 });
 
 // 5. Update Existing Record
 app.put('/api/records/:id', (req, res) => {
   const { id } = req.params;
-  const { name, contact, address, initiative } = req.body;
+  const { name, contact, address, initiative, voter } = req.body;
 
-  const records = readRecords();
+  let records = readRecords();
   const index = records.findIndex(r => r.id === id);
 
   if (index === -1) {
@@ -188,8 +270,12 @@ app.put('/api/records/:id', (req, res) => {
   if (initiative && INITIATIVES.includes(initiative.trim())) {
     records[index].initiative = initiative.trim();
   }
+  if (voter !== undefined) {
+    records[index].voter = (voter && voter.toLowerCase() === 'yes') ? 'Yes' : 'No';
+  }
 
   records[index].updatedAt = new Date().toISOString();
+  records = computeDuplicates(records);
   writeRecords(records);
 
   res.json({
@@ -211,7 +297,9 @@ app.delete('/api/records/:id', (req, res) => {
     return res.status(404).json({ success: false, error: 'Record not found' });
   }
 
+  records = computeDuplicates(records);
   writeRecords(records);
+
   res.json({
     success: true,
     message: 'Record deleted successfully'
@@ -236,13 +324,16 @@ app.post('/api/reset', (req, res) => {
 // 8. Export CSV Endpoint
 app.get('/api/export/csv', (req, res) => {
   const records = readRecords();
-  const header = ['ID', 'Name', 'Contact', 'Address', 'Initiative', 'Created At'];
+  const header = ['ID', 'Name', 'Contact', 'Address', 'Initiative', 'Voter', 'Is Duplicate', 'Duplicate Reason', 'Created At'];
   const rows = records.map(r => [
     `"${r.id}"`,
     `"${(r.name || '').replace(/"/g, '""')}"`,
     `"${(r.contact || '').replace(/"/g, '""')}"`,
     `"${(r.address || '').replace(/"/g, '""')}"`,
     `"${(r.initiative || '').replace(/"/g, '""')}"`,
+    `"${r.voter || 'No'}"`,
+    `"${r.isDuplicate ? 'YES' : 'NO'}"`,
+    `"${(r.duplicateReasons || []).join('; ').replace(/"/g, '""')}"`,
     `"${r.createdAt}"`
   ]);
 

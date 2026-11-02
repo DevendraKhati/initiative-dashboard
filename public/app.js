@@ -1,31 +1,33 @@
-// Initiative Central Dashboard - Frontend Logic
+// Initiative Central Dashboard - Frontend Logic with Duplicate Detection & Highlighting
 
 document.addEventListener('DOMContentLoaded', () => {
   // Application State
   const state = {
     records: [],
-    stats: { total: 0, byInitiative: {} },
+    stats: { total: 0, byInitiative: {}, duplicateCount: 0, uniqueCount: 0 },
     selectedInitiative: 'All',
+    duplicateFilter: 'all', // 'all', 'duplicates_only', 'unique_only'
     searchQuery: '',
     sortBy: 'createdAt',
     sortOrder: 'desc',
     currentPage: 1,
-    pageSize: 8,
+    pageSize: 10,
     deleteTargetId: null,
     isEditing: false
   };
 
   // DOM Elements
   const initiativeFilter = document.getElementById('initiativeFilter');
+  const duplicateFilter = document.getElementById('duplicateFilter');
   const searchInput = document.getElementById('searchInput');
   const clearSearchBtn = document.getElementById('clearSearchBtn');
   const sortBySelect = document.getElementById('sortBy');
   const tableBody = document.getElementById('tableBody');
   const emptyState = document.getElementById('emptyState');
   const emptyStateResetBtn = document.getElementById('emptyStateResetBtn');
-  const activeFilterBar = document.getElementById('activeFilterBar');
   const activeFilterText = document.getElementById('activeFilterText');
   const resultsCountBadge = document.getElementById('resultsCountBadge');
+  const duplicatesCountBadge = document.getElementById('duplicatesCountBadge');
   const clearAllFiltersBtn = document.getElementById('clearAllFiltersBtn');
   const paginationInfo = document.getElementById('paginationInfo');
   const prevPageBtn = document.getElementById('prevPageBtn');
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const statDiwaliCount = document.getElementById('statDiwaliCount');
   const statShyamCount = document.getElementById('statShyamCount');
   const statSportsCount = document.getElementById('statSportsCount');
+  const statGiftCount = document.getElementById('statGiftCount');
 
   // Stat Cards
   const statCards = document.querySelectorAll('.stat-card');
@@ -58,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formContact = document.getElementById('formContact');
   const formAddress = document.getElementById('formAddress');
   const formInitiative = document.getElementById('formInitiative');
+  const formVoter = document.getElementById('formVoter');
 
   // Delete Modal
   const deleteModal = document.getElementById('deleteModal');
@@ -66,33 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
   const closeDeleteModalBtn = document.getElementById('closeDeleteModalBtn');
 
-  // Other buttons
+  // Buttons
   const exportCsvBtn = document.getElementById('exportCsvBtn');
   const resetDataBtn = document.getElementById('resetDataBtn');
   const toastContainer = document.getElementById('toastContainer');
 
-  // Initiative Icon & Style Mapping
+  // 5 Initiative Configurations
   const INITIATIVE_CONFIG = {
-    'Apne Apne Ram': {
-      class: 'badge-ram',
-      icon: 'fa-om',
-      emoji: '🚩'
-    },
-    'Diwali Event': {
-      class: 'badge-diwali',
-      icon: 'fa-fire',
-      emoji: '🪔'
-    },
-    'Khatu Shyam': {
-      class: 'badge-shyam',
-      icon: 'fa-hands-praying',
-      emoji: '🙏'
-    },
-    'Sports Talent': {
-      class: 'badge-sports',
-      icon: 'fa-trophy',
-      emoji: '🏆'
-    }
+    'Apne Apne Ram': { class: 'badge-ram', icon: 'fa-om' },
+    'Diwali Event': { class: 'badge-diwali', icon: 'fa-fire' },
+    'Khatu Shyam': { class: 'badge-shyam', icon: 'fa-hands-praying' },
+    'Sports Talent': { class: 'badge-sports', icon: 'fa-trophy' },
+    'Gift Distribution': { class: 'badge-gift', icon: 'fa-gift' }
   };
 
   // Helper: Toast Notifications
@@ -127,6 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
         statDiwaliCount.textContent = data.stats.byInitiative['Diwali Event'] || 0;
         statShyamCount.textContent = data.stats.byInitiative['Khatu Shyam'] || 0;
         statSportsCount.textContent = data.stats.byInitiative['Sports Talent'] || 0;
+        if (statGiftCount) {
+          statGiftCount.textContent = data.stats.byInitiative['Gift Distribution'] || 0;
+        }
       }
     } catch (err) {
       console.error('Error loading stats:', err);
@@ -138,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const params = new URLSearchParams({
         initiative: state.selectedInitiative,
+        duplicateFilter: state.duplicateFilter,
         search: state.searchQuery,
         sortBy: state.sortBy,
         sortOrder: state.sortOrder
@@ -148,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (data.success) {
         state.records = data.records;
-        state.currentPage = 1; // Reset to page 1 on filter/search change
+        state.currentPage = 1;
         renderTable();
         updateFilterBar(data.total);
       }
@@ -162,17 +155,33 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateFilterBar(count) {
     resultsCountBadge.textContent = `${count} ${count === 1 ? 'record' : 'records'}`;
 
-    if (state.selectedInitiative !== 'All' || state.searchQuery.trim() !== '') {
-      let label = state.selectedInitiative !== 'All' ? `Initiative: "${state.selectedInitiative}"` : 'All Initiatives';
-      if (state.searchQuery.trim()) {
-        label += ` matching "${state.searchQuery}"`;
-      }
-      activeFilterText.textContent = `Showing: ${label}`;
-      clearAllFiltersBtn.style.display = 'inline-block';
-    } else {
-      activeFilterText.textContent = 'Showing: All Initiatives';
-      clearAllFiltersBtn.style.display = 'none';
+    const duplicatesInView = state.records.filter(r => r.isDuplicate).length;
+    duplicatesCountBadge.textContent = `${duplicatesInView} ${duplicatesInView === 1 ? 'duplicate' : 'duplicates'}`;
+    duplicatesCountBadge.style.display = duplicatesInView > 0 ? 'inline-block' : 'none';
+
+    let isFiltered = false;
+    let label = 'All Initiatives';
+
+    if (state.selectedInitiative !== 'All') {
+      label = `Initiative: "${state.selectedInitiative}"`;
+      isFiltered = true;
     }
+
+    if (state.duplicateFilter === 'duplicates_only') {
+      label += ' (Duplicates Only)';
+      isFiltered = true;
+    } else if (state.duplicateFilter === 'unique_only') {
+      label += ' (Unique Only)';
+      isFiltered = true;
+    }
+
+    if (state.searchQuery.trim()) {
+      label += ` matching "${state.searchQuery}"`;
+      isFiltered = true;
+    }
+
+    activeFilterText.textContent = `Showing: ${label}`;
+    clearAllFiltersBtn.style.display = isFiltered ? 'inline-block' : 'none';
   }
 
   // Generate initials for avatar
@@ -200,7 +209,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Render Table Rows with Pagination
+  // HTML Escape helper
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // Render Table Rows with Pagination & Duplicate Highlighting
   function renderTable() {
     tableBody.innerHTML = '';
 
@@ -213,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     emptyState.style.display = 'none';
     document.querySelector('.table-footer').style.display = 'flex';
 
-    // Pagination calculations
+    // Pagination
     const totalRecords = state.records.length;
     const totalPages = Math.ceil(totalRecords / state.pageSize) || 1;
     if (state.currentPage > totalPages) state.currentPage = totalPages;
@@ -222,16 +242,70 @@ document.addEventListener('DOMContentLoaded', () => {
     const endIdx = Math.min(startIdx + state.pageSize, totalRecords);
     const paginatedRecords = state.records.slice(startIdx, endIdx);
 
-    // Populate rows
     paginatedRecords.forEach((rec, idx) => {
       const tr = document.createElement('tr');
+      if (rec.isDuplicate) {
+        tr.classList.add('row-duplicate');
+      }
+
       const cfg = INITIATIVE_CONFIG[rec.initiative] || {
         class: 'badge-ram',
-        icon: 'fa-tag',
-        emoji: '📌'
+        icon: 'fa-tag'
       };
 
       const initials = getInitials(rec.name);
+      const isContactDup = rec.duplicateFields && rec.duplicateFields.includes('contact');
+      const isNameDup = rec.duplicateFields && rec.duplicateFields.includes('name');
+
+      // Contact cell with duplicate highlight
+      let contactHtml = '';
+      if (isContactDup) {
+        contactHtml = `
+          <div class="dup-contact-box" title="⚠️ Duplicate Phone Number: ${escapeHtml(rec.contact)}">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>${escapeHtml(rec.contact)}</span>
+          </div>
+        `;
+      } else {
+        contactHtml = `
+          <div class="normal-contact-box">
+            <i class="fa-solid fa-phone" style="font-size: 11px; color: var(--text-light);"></i>
+            <span>${escapeHtml(rec.contact)}</span>
+          </div>
+        `;
+      }
+
+      // Name cell with duplicate badge if name repeats
+      let nameBadgesHtml = '';
+      if (isNameDup) {
+        nameBadgesHtml = `<span class="dup-badge-name" title="⚠️ Duplicate Name"><i class="fa-solid fa-triangle-exclamation"></i> Dup Name</span>`;
+      }
+
+      // Duplicate Status Column
+      let dupStatusHtml = '';
+      if (rec.isDuplicate) {
+        const reason = (rec.duplicateReasons && rec.duplicateReasons[0]) ? rec.duplicateReasons[0] : 'Duplicate Entry';
+        dupStatusHtml = `
+          <div class="dup-status-badge">
+            <span class="pill-duplicate" title="${escapeHtml(reason)}">
+              <i class="fa-solid fa-triangle-exclamation"></i> Duplicate
+            </span>
+            <span class="dup-reason-text">${escapeHtml(reason)}</span>
+          </div>
+        `;
+      } else {
+        dupStatusHtml = `
+          <span class="pill-unique">
+            <i class="fa-solid fa-circle-check"></i> Unique
+          </span>
+        `;
+      }
+
+      // Voter badge
+      const voterVal = rec.voter === 'Yes' ? 'Yes' : 'No';
+      const voterBadgeHtml = voterVal === 'Yes' 
+        ? `<span class="voter-badge voter-yes"><i class="fa-solid fa-check"></i> Yes</span>`
+        : `<span class="voter-badge voter-no">No</span>`;
 
       tr.innerHTML = `
         <td>
@@ -239,14 +313,16 @@ document.addEventListener('DOMContentLoaded', () => {
         </td>
         <td>
           <div class="member-info">
-            <span class="member-name">${escapeHtml(rec.name)}</span>
+            <div class="member-name-row">
+              <span class="member-name">${escapeHtml(rec.name)}</span>
+              ${nameBadgesHtml}
+            </div>
             <span class="member-id">${rec.id}</span>
           </div>
         </td>
         <td>
           <div class="contact-cell">
-            <i class="fa-solid fa-phone" style="font-size: 12px; color: var(--text-light);"></i>
-            <span>${escapeHtml(rec.contact)}</span>
+            ${contactHtml}
             <button class="copy-btn" data-copy="${escapeHtml(rec.contact)}" title="Copy Contact">
               <i class="fa-regular fa-copy"></i>
             </button>
@@ -263,6 +339,12 @@ document.addEventListener('DOMContentLoaded', () => {
             <i class="fa-solid ${cfg.icon}"></i>
             <span>${escapeHtml(rec.initiative)}</span>
           </span>
+        </td>
+        <td>
+          ${dupStatusHtml}
+        </td>
+        <td>
+          ${voterBadgeHtml}
         </td>
         <td>
           <span class="date-cell">${formatDate(rec.createdAt)}</span>
@@ -292,7 +374,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render Page Number Buttons
   function renderPageNumbers(totalPages) {
     pageNumbers.innerHTML = '';
-    for (let i = 1; i <= totalPages; i++) {
+    const maxButtons = 5;
+    let startPage = Math.max(1, state.currentPage - Math.floor(maxButtons / 2));
+    let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+    if (endPage - startPage < maxButtons - 1) {
+      startPage = Math.max(1, endPage - maxButtons + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
       const btn = document.createElement('button');
       btn.className = `page-num ${i === state.currentPage ? 'active' : ''}`;
       btn.textContent = i;
@@ -304,23 +393,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // HTML Escape helper
-  function escapeHtml(str) {
-    if (!str) return '';
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-  }
-
   // Set Initiative Filter Function
   function setInitiativeFilter(init) {
     state.selectedInitiative = init;
     initiativeFilter.value = init;
 
-    // Update stat card active styles
     statCards.forEach(card => {
       if (card.dataset.initiative === init) {
         card.classList.add('active');
@@ -335,6 +412,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event: Initiative Dropdown Change
   initiativeFilter.addEventListener('change', (e) => {
     setInitiativeFilter(e.target.value);
+  });
+
+  // Event: Duplicates Filter Change
+  duplicateFilter.addEventListener('change', (e) => {
+    state.duplicateFilter = e.target.value;
+    fetchRecords();
   });
 
   // Event: Click on any Stat Card
@@ -372,11 +455,13 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchRecords();
   });
 
-  // Event: Reset Filter Buttons
+  // Reset Filters
   function resetAllFilters() {
     searchInput.value = '';
     state.searchQuery = '';
     clearSearchBtn.style.display = 'none';
+    state.duplicateFilter = 'all';
+    duplicateFilter.value = 'all';
     setInitiativeFilter('All');
   }
 
@@ -399,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Copy to clipboard click delegation
+  // Table row actions delegation (copy, edit, delete)
   tableBody.addEventListener('click', (e) => {
     const copyBtn = e.target.closest('.copy-btn');
     if (copyBtn) {
@@ -410,7 +495,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Edit button click
     const editBtn = e.target.closest('.btn-icon.edit');
     if (editBtn) {
       const id = editBtn.dataset.id;
@@ -418,7 +502,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Delete button click
     const delBtn = e.target.closest('.btn-icon.delete');
     if (delBtn) {
       const id = delBtn.dataset.id;
@@ -428,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Modal Open / Close Helpers
+  // Modal Functions
   function openAddModal() {
     state.isEditing = false;
     modalTitle.textContent = 'Add New Member';
@@ -437,9 +520,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     recordForm.reset();
     recordIdInput.value = '';
+    formVoter.value = 'No';
     clearFormErrors();
 
-    // Default to currently selected initiative if not 'All'
     if (state.selectedInitiative !== 'All') {
       formInitiative.value = state.selectedInitiative;
     }
@@ -462,6 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formContact.value = rec.contact;
     formAddress.value = rec.address;
     formInitiative.value = rec.initiative;
+    formVoter.value = rec.voter || 'No';
 
     clearFormErrors();
     recordModal.classList.add('open');
@@ -480,7 +564,6 @@ document.addEventListener('DOMContentLoaded', () => {
   closeModalBtn.addEventListener('click', closeModal);
   cancelModalBtn.addEventListener('click', closeModal);
 
-  // Close modals on Esc or backdrop click
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeModal();
@@ -496,7 +579,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === deleteModal) closeDeleteModal();
   });
 
-  // Form Submission (Add or Edit)
+  // Form Submission
   recordForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     clearFormErrors();
@@ -505,6 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contact = formContact.value.trim();
     const address = formAddress.value.trim();
     const initiative = formInitiative.value;
+    const voter = formVoter.value;
 
     let hasError = false;
     if (!name) {
@@ -526,20 +610,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hasError) return;
 
-    const payload = { name, contact, address, initiative };
+    const payload = { name, contact, address, initiative, voter };
     const id = recordIdInput.value;
 
     try {
       let res;
       if (state.isEditing && id) {
-        // Update existing
         res = await fetch(`/api/records/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
       } else {
-        // Create new
         res = await fetch('/api/records', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -549,9 +631,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const data = await res.json();
       if (data.success) {
+        const isDup = data.record && data.record.isDuplicate;
         showToast(
-          state.isEditing ? `Updated "${name}" successfully!` : `Added "${name}" to ${initiative}!`,
-          'success'
+          state.isEditing 
+            ? `Updated "${name}" successfully!` 
+            : `Added "${name}" to ${initiative}! ${isDup ? '⚠️ (Marked as Duplicate)' : ''}`,
+          isDup ? 'info' : 'success'
         );
         closeModal();
         await fetchStats();
@@ -565,7 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Delete Modal Helpers
+  // Delete Handlers
   function openDeleteModal(id, name) {
     state.deleteTargetId = id;
     deleteTargetName.textContent = name;
@@ -602,15 +687,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Export to CSV Button
+  // Export CSV
   exportCsvBtn.addEventListener('click', () => {
     window.location.href = '/api/export/csv';
-    showToast('Downloading CSV export...', 'info');
+    showToast('Downloading CSV export with duplicate & voter flags...', 'info');
   });
 
   // Reset Sample Data
   resetDataBtn.addEventListener('click', async () => {
-    if (!confirm('Reset all records back to default sample data? Any newly created entries will be reset.')) {
+    if (!confirm('Reset all records back to default sample dataset?')) {
       return;
     }
 
@@ -631,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Initialize App
+  // Initial Load
   fetchStats();
   fetchRecords();
 });

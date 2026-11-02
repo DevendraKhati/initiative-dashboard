@@ -5,7 +5,10 @@
     "contact": "+91 98765 43210",
     "address": "142 Civil Lines, Jaipur, Rajasthan",
     "initiative": "Apne Apne Ram",
-    "createdAt": "2026-10-15T10:30:00.000Z"
+    "createdAt": "2026-10-15T10:30:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_002",
@@ -13,7 +16,10 @@
     "contact": "+91 98112 34567",
     "address": "Flat 402, Shanti Kunj, Ayodhya, Uttar Pradesh",
     "initiative": "Apne Apne Ram",
-    "createdAt": "2026-10-18T14:15:00.000Z"
+    "createdAt": "2026-10-18T14:15:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_003",
@@ -21,7 +27,10 @@
     "contact": "+91 97234 56789",
     "address": "56 Ram Ghat Marg, Haridwar, Uttarakhand",
     "initiative": "Apne Apne Ram",
-    "createdAt": "2026-10-22T09:00:00.000Z"
+    "createdAt": "2026-10-22T09:00:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_004",
@@ -29,7 +38,10 @@
     "contact": "+91 99887 76655",
     "address": "78 Park Street, Kolkata, West Bengal",
     "initiative": "Diwali Event",
-    "createdAt": "2026-10-25T11:45:00.000Z"
+    "createdAt": "2026-10-25T11:45:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_005",
@@ -37,7 +49,10 @@
     "contact": "+91 94123 78901",
     "address": "12 Chandni Chowk, New Delhi, Delhi",
     "initiative": "Diwali Event",
-    "createdAt": "2026-10-26T16:20:00.000Z"
+    "createdAt": "2026-10-26T16:20:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_006",
@@ -45,7 +60,10 @@
     "contact": "+91 96543 21098",
     "address": "23 Deccan Gymkhana, Pune, Maharashtra",
     "initiative": "Diwali Event",
-    "createdAt": "2026-10-27T18:00:00.000Z"
+    "createdAt": "2026-10-27T18:00:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_007",
@@ -53,7 +71,10 @@
     "contact": "+91 91234 56780",
     "address": "Ward 12, Ringas Road, Sikar, Rajasthan",
     "initiative": "Khatu Shyam",
-    "createdAt": "2026-10-28T08:30:00.000Z"
+    "createdAt": "2026-10-28T08:30:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_008",
@@ -61,7 +82,10 @@
     "contact": "+91 98321 45678",
     "address": "89 Malviya Nagar, Alwar, Rajasthan",
     "initiative": "Khatu Shyam",
-    "createdAt": "2026-10-29T12:10:00.000Z"
+    "createdAt": "2026-10-29T12:10:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_009",
@@ -69,7 +93,10 @@
     "contact": "+91 95432 10987",
     "address": "34 Shyam Vatika, Mathura, Uttar Pradesh",
     "initiative": "Khatu Shyam",
-    "createdAt": "2026-10-30T15:40:00.000Z"
+    "createdAt": "2026-10-30T15:40:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_010",
@@ -77,7 +104,10 @@
     "contact": "+91 98711 22334",
     "address": "Sector 15 Sports Complex, Chandigarh, Punjab",
     "initiative": "Sports Talent",
-    "createdAt": "2026-10-31T07:45:00.000Z"
+    "createdAt": "2026-10-31T07:45:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_011",
@@ -85,7 +115,10 @@
     "contact": "+91 93456 78901",
     "address": "105 Shivaji Nagar, Nagpur, Maharashtra",
     "initiative": "Sports Talent",
-    "createdAt": "2026-11-01T10:00:00.000Z"
+    "createdAt": "2026-11-01T10:00:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_012",
@@ -93,7 +126,10 @@
     "contact": "+91 99456 12345",
     "address": "42 Marine Drive, Kochi, Kerala",
     "initiative": "Sports Talent",
-    "createdAt": "2026-11-01T14:30:00.000Z"
+    "createdAt": "2026-11-01T14:30:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
   },
   {
     "id": "rec_013",
@@ -101,6 +137,6489 @@
     "contact": "+91 97123 89012",
     "address": "18 Stadium Road, Meerut, Uttar Pradesh",
     "initiative": "Sports Talent",
-    "createdAt": "2026-11-02T09:15:00.000Z"
+    "createdAt": "2026-11-02T09:15:00.000Z",
+    "isDuplicate": false,
+    "duplicateFields": [],
+    "duplicateReasons": []
+  },
+  {
+    "id": "gift_001",
+    "name": "ANITA",
+    "contact": "8800602959",
+    "address": "Noida-Sector-101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-18T10:31:54.265Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_002",
+    "name": "GETA",
+    "contact": "9355346288",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T11:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_003",
+    "name": "RAJEEV",
+    "contact": "9211565518",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T12:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_004",
+    "name": "SURAJPAL",
+    "contact": "8006226388",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T13:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_005",
+    "name": "AMINUL",
+    "contact": "9650432031",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T14:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_006",
+    "name": "MAYNAL",
+    "contact": "7602286881",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T15:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_007",
+    "name": "MANOJ",
+    "contact": "8388049492",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-18T16:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_008",
+    "name": "SARKAR",
+    "contact": "9717965470",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T17:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_009",
+    "name": "NOOR",
+    "contact": "7063321343",
+    "address": "Noida sector 49",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T18:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_010",
+    "name": "EJAL PRAMANIK",
+    "contact": "7065109941",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T19:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_011",
+    "name": "SUMIT",
+    "contact": "9990832704",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-18T20:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_012",
+    "name": "AVDESH",
+    "contact": "7830206404",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-18T21:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_013",
+    "name": "HEMLATA",
+    "contact": "9953818631",
+    "address": "Noida sector101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-18T22:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_014",
+    "name": "MAMTA",
+    "contact": "7827588137",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-18T23:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_015",
+    "name": "SIMTA",
+    "contact": "9918899761",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T00:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_016",
+    "name": "LAIZU KHAN",
+    "contact": "7364081205",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T01:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_017",
+    "name": "ROSHAN KHAN",
+    "contact": "8076815297",
+    "address": "DELHI",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T02:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_018",
+    "name": "RESHAM",
+    "contact": "8447371862",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T03:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_019",
+    "name": "MADHAVI",
+    "contact": "9354624015",
+    "address": "Noida sector-101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-19T04:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_020",
+    "name": "ARTI",
+    "contact": "9910630753",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-19T05:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_021",
+    "name": "RESHMA",
+    "contact": "9599601925",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T06:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_022",
+    "name": "SUMAN",
+    "contact": "7838933085",
+    "address": "Noida sector-101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T07:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_023",
+    "name": "shital",
+    "contact": "9717240271",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T08:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_024",
+    "name": "BEJANTI  MALA",
+    "contact": "9999593632",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-19T09:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_025",
+    "name": "JAMUNA",
+    "contact": "9310667557",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T10:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_026",
+    "name": "RAKAM DEVI",
+    "contact": "9534848621",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T11:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_027",
+    "name": "NARGIS",
+    "contact": "9933929025",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T12:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_028",
+    "name": "SAVITRI",
+    "contact": "9749233590",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T13:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_029",
+    "name": "ROSHNI",
+    "contact": "7060505301",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-19T14:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_030",
+    "name": "GAYTRI",
+    "contact": "9113468136",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T15:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_031",
+    "name": "RAMKI",
+    "contact": "9113468136",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T16:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_032",
+    "name": "KAVITA",
+    "contact": "7352622611",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T17:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_033",
+    "name": "NANDNI",
+    "contact": "7210376835",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T18:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_034",
+    "name": "SUMAN",
+    "contact": "8527815856",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T19:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_035",
+    "name": "BIJESHRI",
+    "contact": "88262555139",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T20:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_036",
+    "name": "RAMVATI",
+    "contact": "7303781393",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T21:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_037",
+    "name": "MANISHA",
+    "contact": "9315785205",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T22:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_038",
+    "name": "KIRAN",
+    "contact": "9971754739",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-19T23:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_039",
+    "name": "DOLLY",
+    "contact": "8800497134",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T00:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_040",
+    "name": "NEETU",
+    "contact": "8130537551",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T01:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_041",
+    "name": "BULKI",
+    "contact": "8448076996",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T02:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_042",
+    "name": "KHUSHBOO",
+    "contact": "6392798258",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T03:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_043",
+    "name": "SONI",
+    "contact": "9279512627",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T04:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_044",
+    "name": "SANTOSHI",
+    "contact": "8178393199",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T05:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_045",
+    "name": "MEENA SHARMA",
+    "contact": "9599146431",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T06:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_046",
+    "name": "MOMITA",
+    "contact": "8384073037",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T07:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_047",
+    "name": "HASMEENA",
+    "contact": "9717583971",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T08:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_048",
+    "name": "GUNJAN",
+    "contact": "9911424687",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T09:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_049",
+    "name": "ANJALI",
+    "contact": "7835383537",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T10:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_050",
+    "name": "RUBI",
+    "contact": "9643636519",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T11:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_051",
+    "name": "LAXMI",
+    "contact": "9818021489",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T12:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_052",
+    "name": "PRETI",
+    "contact": "8796479405",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T13:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_053",
+    "name": "SHEETAL",
+    "contact": "8766345300",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T14:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_054",
+    "name": "VASUNDHRA",
+    "contact": "9311810681",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T15:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_055",
+    "name": "ANITA",
+    "contact": "9310802747",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T16:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_056",
+    "name": "ANJALI",
+    "contact": "6287114225",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T17:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_057",
+    "name": "SANGEETA",
+    "contact": "7531658978",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T18:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_058",
+    "name": "PRIYA",
+    "contact": "6361239201",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T19:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_059",
+    "name": "VINITA",
+    "contact": "9717879406",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T20:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_060",
+    "name": "RUBIKA",
+    "contact": "8587873749",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T21:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_061",
+    "name": "RAJESHVRI  DEVI",
+    "contact": "9720545915",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-20T22:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_062",
+    "name": "SEEMA",
+    "contact": "7838424362",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-20T23:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_063",
+    "name": "RAKHI",
+    "contact": "9205235105",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-21T00:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_064",
+    "name": "TEENA",
+    "contact": "9818736056",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-21T01:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_065",
+    "name": "ANJALI",
+    "contact": "8171904091",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-21T02:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_066",
+    "name": "SANTANA",
+    "contact": "8851666501",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-21T03:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_067",
+    "name": "REEMA",
+    "contact": "7908158221",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-21T04:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_068",
+    "name": "SHANTI",
+    "contact": "8527414814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-21T05:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_069",
+    "name": "SUMAN",
+    "contact": "8180260973",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T06:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_070",
+    "name": "MANDIRA",
+    "contact": "9667585587",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-21T07:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_071",
+    "name": "NEETU KUMARI",
+    "contact": "9570663184",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T08:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_072",
+    "name": "SWATI",
+    "contact": "9773528762",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T09:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_073",
+    "name": "VARSHA",
+    "contact": "9625537201",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T10:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_074",
+    "name": "MAMUNI",
+    "contact": "9064667714",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T11:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_075",
+    "name": "KARUNA",
+    "contact": "7501506064",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T12:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_076",
+    "name": "MUSNAYI",
+    "contact": "7318721149",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T13:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_077",
+    "name": "SAVITA SARKAR",
+    "contact": "9354007827",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T14:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_078",
+    "name": "ASITA",
+    "contact": "8800531297",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T15:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_079",
+    "name": "FOOLDEVI",
+    "contact": "9311358536",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T16:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_080",
+    "name": "ASMA",
+    "contact": "9811755279",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T17:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_081",
+    "name": "PAYAL",
+    "contact": "8295455882",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T18:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_082",
+    "name": "SONAM",
+    "contact": "9354368896",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T19:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_083",
+    "name": "POOJA",
+    "contact": "9958433214",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T20:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_084",
+    "name": "NISHA",
+    "contact": "9289477893",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T21:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_085",
+    "name": "POOJA KUMARI",
+    "contact": "9971828157",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T22:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_086",
+    "name": "SANTOSH",
+    "contact": "9971828157",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-21T23:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_087",
+    "name": "SITA",
+    "contact": "9217752591",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T00:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_088",
+    "name": "SUNEETA",
+    "contact": "8178351654",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T01:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_089",
+    "name": "SAKHISHI",
+    "contact": "7982025576",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T02:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_090",
+    "name": "MUSKAN",
+    "contact": "8376970795",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T03:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_091",
+    "name": "VANDANA",
+    "contact": "Not Provided",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T04:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_092",
+    "name": "KUSMA",
+    "contact": "7027831817",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T05:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_093",
+    "name": "GUDDI",
+    "contact": "8953859568",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T06:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_094",
+    "name": "ARJUN",
+    "contact": "8130846566",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T07:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_095",
+    "name": "AEISHA",
+    "contact": "8178091658",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T08:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_096",
+    "name": "ASHA DEVI",
+    "contact": "882653028",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T09:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_097",
+    "name": "SURENDRA DEVI",
+    "contact": "9599869712",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T10:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_098",
+    "name": "AAKIMA",
+    "contact": "995342554",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T11:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_099",
+    "name": "SEMA",
+    "contact": "7838347063",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T12:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_100",
+    "name": "KHUSBHOO",
+    "contact": "9931152251",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T13:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_101",
+    "name": "LAL BANO",
+    "contact": "8744811433",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T14:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_102",
+    "name": "ARTI",
+    "contact": "9289062896",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T15:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_103",
+    "name": "KACHAN",
+    "contact": "8851544796",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T16:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_104",
+    "name": "VANDNA",
+    "contact": "9711404410",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T17:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_105",
+    "name": "GOLDEE",
+    "contact": "8545846715",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T18:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_106",
+    "name": "POOJA",
+    "contact": "8924811797",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T19:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_107",
+    "name": "KHADIJA",
+    "contact": "7063803926",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T20:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_108",
+    "name": "FULLADEVI",
+    "contact": "7706966194",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T21:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_109",
+    "name": "ANITA",
+    "contact": "8918167030",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T22:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_110",
+    "name": "ROOMA",
+    "contact": "8130846560",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-22T23:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_111",
+    "name": "KIRTI",
+    "contact": "8427084767",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T00:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_112",
+    "name": "SLEPA",
+    "contact": "7084089915",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T01:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_113",
+    "name": "RANI",
+    "contact": "9217256997",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T02:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_114",
+    "name": "KAVITA",
+    "contact": "926659026",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T03:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_115",
+    "name": "RADHIKA",
+    "contact": "9196255763",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T04:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_116",
+    "name": "RADHIKA",
+    "contact": "7303894897",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T05:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_117",
+    "name": "PRIYA",
+    "contact": "9756382311",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T06:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_118",
+    "name": "SANJU",
+    "contact": "9315914727",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T07:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_119",
+    "name": "CHANCHAL",
+    "contact": "892964030",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T08:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_120",
+    "name": "RUBI",
+    "contact": "8510956059",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T09:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_121",
+    "name": "VINITA KUMARI",
+    "contact": "Not Provided",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-23T10:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_122",
+    "name": "ANJALI KUMARI",
+    "contact": "7838826927",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T11:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_123",
+    "name": "SAMVATI",
+    "contact": "6399725347",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T12:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_124",
+    "name": "MAYA DEVI",
+    "contact": "8527477614",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T13:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_125",
+    "name": "SANGEETA DEVI",
+    "contact": "9667916541",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T14:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_126",
+    "name": "VIMALA DEVI",
+    "contact": "7505278993",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T15:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_127",
+    "name": "ARTI DEVI",
+    "contact": "9198353912",
+    "address": "Noida sectot-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T16:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_128",
+    "name": "KUSMAVATI DEVI",
+    "contact": "9953646267",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-23T17:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_129",
+    "name": "GULSHAN",
+    "contact": "7303630709",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-23T18:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_130",
+    "name": "ABHILASHA",
+    "contact": "8953431283",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T19:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_131",
+    "name": "SHASHI KUMARI",
+    "contact": "7042652491",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T20:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_132",
+    "name": "MITHLESH",
+    "contact": "9643278856",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T21:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_133",
+    "name": "SARITA",
+    "contact": "Not Provided",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T22:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_134",
+    "name": "JAGITA",
+    "contact": "7827433431",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-23T23:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_135",
+    "name": "SUKHI DEVI",
+    "contact": "9871824012",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T00:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_136",
+    "name": "RADHA",
+    "contact": "7838953686",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-24T01:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_137",
+    "name": "SEEMA",
+    "contact": "8851321290",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-24T02:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_138",
+    "name": "SARVESH MATHUR",
+    "contact": "9990289167",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-24T03:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_139",
+    "name": "SUMAN",
+    "contact": "7065453092",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T04:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_140",
+    "name": "REKHA SINGH",
+    "contact": "9559003925",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T05:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_141",
+    "name": "SUDHA",
+    "contact": "9711424310",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T06:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_142",
+    "name": "CHANDNI DEVI",
+    "contact": "8376970795",
+    "address": "Noida sector 81",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-24T07:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_143",
+    "name": "SUMAN",
+    "contact": "8448637618",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-24T08:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_144",
+    "name": "SAVITRI",
+    "contact": "9355252891",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T09:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_145",
+    "name": "VANDNA",
+    "contact": "9667493238",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T10:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_146",
+    "name": "PUSPA",
+    "contact": "7526879654",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T11:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_147",
+    "name": "KHUSHBOO",
+    "contact": "9667312406",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T12:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_148",
+    "name": "KAMLA",
+    "contact": "8929001545",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-24T13:31:54.267Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_149",
+    "name": "KUSUM",
+    "contact": "Not Provided",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_150",
+    "name": "VEDATI",
+    "contact": "7827504584",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_151",
+    "name": "SONIKA",
+    "contact": "9354368894",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_152",
+    "name": "ARTI",
+    "contact": "9354368894",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_153",
+    "name": "ANITA",
+    "contact": "9289921011",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_154",
+    "name": "PINKI",
+    "contact": "8677018871",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_155",
+    "name": "INDU",
+    "contact": "8377882635",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_156",
+    "name": "BABITA",
+    "contact": "7838102339",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_157",
+    "name": "URMILA",
+    "contact": "8860404924",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_158",
+    "name": "SUHANI",
+    "contact": "800636801",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-24T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_159",
+    "name": "KRISHNA",
+    "contact": "9667843514",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-25T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_160",
+    "name": "JHARNA DEVI",
+    "contact": "7928478394",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_161",
+    "name": "SHIKHA DEVI",
+    "contact": "6287142252",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_162",
+    "name": "KANCHAN",
+    "contact": "7838834664",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_163",
+    "name": "SARSWATI",
+    "contact": "9815032215",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_164",
+    "name": "VANDNA",
+    "contact": "9560895814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_165",
+    "name": "KOMAL",
+    "contact": "9220868577",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_166",
+    "name": "LAXMI SARKAR",
+    "contact": "7011708429",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_167",
+    "name": "SITA VERMA",
+    "contact": "7982025576",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_168",
+    "name": "LAXMI",
+    "contact": "8130815947",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_169",
+    "name": "PREETI",
+    "contact": "8287743814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T10:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_170",
+    "name": "MAMATA DEVI",
+    "contact": "9953689893",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T11:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_171",
+    "name": "ALINA",
+    "contact": "7303916734",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T12:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_172",
+    "name": "SHEELA DEVI",
+    "contact": "9528235377",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-25T13:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_173",
+    "name": "POOJA",
+    "contact": "8923733559",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_174",
+    "name": "MOPIYA BANO",
+    "contact": "9548929933",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_175",
+    "name": "AABHA",
+    "contact": "9326515455",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_176",
+    "name": "USHA",
+    "contact": "9560895814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_177",
+    "name": "NANADNI",
+    "contact": "9560895814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_178",
+    "name": "REKHA",
+    "contact": "9759040909",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-25T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_179",
+    "name": "SONAM",
+    "contact": "8171258851",
+    "address": "Noida sector-101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_180",
+    "name": "SEENU",
+    "contact": "8171258851",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_181",
+    "name": "ANITA",
+    "contact": "8800602959",
+    "address": "Noida-Sector-101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-25T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_182",
+    "name": "GETA",
+    "contact": "9355346288",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-25T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_183",
+    "name": "RAJEEV",
+    "contact": "9211565518",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_184",
+    "name": "SURAJPAL",
+    "contact": "8006226388",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_185",
+    "name": "AMINUL",
+    "contact": "9650432031",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_186",
+    "name": "MAYNAL",
+    "contact": "7602286881",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_187",
+    "name": "MANOJ",
+    "contact": "8388049492",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-26T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_188",
+    "name": "SARKAR",
+    "contact": "9717965470",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_189",
+    "name": "NOOR",
+    "contact": "7063321343",
+    "address": "Noida sector 49",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_190",
+    "name": "EJAL PRAMANIK",
+    "contact": "7065109941",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_191",
+    "name": "SUMIT",
+    "contact": "9990832704",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-26T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_192",
+    "name": "AVDESH",
+    "contact": "7830206404",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-26T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_193",
+    "name": "HEMLATA",
+    "contact": "9953818631",
+    "address": "Noida sector101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-26T10:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_194",
+    "name": "MAMTA",
+    "contact": "7827588137",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T11:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_195",
+    "name": "SIMTA",
+    "contact": "9918899761",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T12:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_196",
+    "name": "LAIZU KHAN",
+    "contact": "7364081205",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T13:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_197",
+    "name": "ROSHAN KHAN",
+    "contact": "8076815297",
+    "address": "DELHI",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_198",
+    "name": "RESHAM",
+    "contact": "8447371862",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_199",
+    "name": "MADHAVI",
+    "contact": "9354624015",
+    "address": "Noida sector-101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-26T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_200",
+    "name": "ARTI",
+    "contact": "9910630753",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-26T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_201",
+    "name": "RESHMA",
+    "contact": "9599601925",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_202",
+    "name": "SUMAN",
+    "contact": "7838933085",
+    "address": "Noida sector-101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_203",
+    "name": "shital",
+    "contact": "9717240271",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_204",
+    "name": "BEJANTI  MALA",
+    "contact": "9999593632",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-26T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_205",
+    "name": "JAMUNA",
+    "contact": "9310667557",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_206",
+    "name": "RAKAM DEVI",
+    "contact": "9534848621",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-26T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_207",
+    "name": "NARGIS",
+    "contact": "9933929025",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_208",
+    "name": "SAVITRI",
+    "contact": "9749233590",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_209",
+    "name": "ROSHNI",
+    "contact": "7060505301",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_210",
+    "name": "GAYTRI",
+    "contact": "9113468136",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_211",
+    "name": "RAMKI",
+    "contact": "9113468136",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_212",
+    "name": "KAVITA",
+    "contact": "7352622611",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_213",
+    "name": "NANDNI",
+    "contact": "7210376835",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_214",
+    "name": "SUMAN",
+    "contact": "8527815856",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_215",
+    "name": "BIJESHRI",
+    "contact": "88262555139",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_216",
+    "name": "RAMVATI",
+    "contact": "7303781393",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_217",
+    "name": "MANISHA",
+    "contact": "9315785205",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T10:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_218",
+    "name": "KIRAN",
+    "contact": "9971754739",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T11:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_219",
+    "name": "DOLLY",
+    "contact": "8800497134",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T12:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_220",
+    "name": "NEETU",
+    "contact": "8130537551",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-27T13:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_221",
+    "name": "BULKI",
+    "contact": "8448076996",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_222",
+    "name": "KHUSHBOO",
+    "contact": "6392798258",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_223",
+    "name": "SONI",
+    "contact": "9279512627",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_224",
+    "name": "SANTOSHI",
+    "contact": "8178393199",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_225",
+    "name": "MEENA SHARMA",
+    "contact": "9599146431",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_226",
+    "name": "MOMITA",
+    "contact": "8384073037",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_227",
+    "name": "HASMEENA",
+    "contact": "9717583971",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_228",
+    "name": "GUNJAN",
+    "contact": "9911424687",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_229",
+    "name": "ANJALI",
+    "contact": "7835383537",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_230",
+    "name": "RUBI",
+    "contact": "9643636519",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-27T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_231",
+    "name": "LAXMI",
+    "contact": "9818021489",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_232",
+    "name": "PRETI",
+    "contact": "8796479405",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_233",
+    "name": "SHEETAL",
+    "contact": "8766345300",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_234",
+    "name": "VASUNDHRA",
+    "contact": "9311810681",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_235",
+    "name": "ANITA",
+    "contact": "9310802747",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_236",
+    "name": "ANJALI",
+    "contact": "6287114225",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_237",
+    "name": "SANGEETA",
+    "contact": "7531658978",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_238",
+    "name": "PRIYA",
+    "contact": "6361239201",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_239",
+    "name": "VINITA",
+    "contact": "9717879406",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_240",
+    "name": "RUBIKA",
+    "contact": "8587873749",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_241",
+    "name": "RAJESHVRI  DEVI",
+    "contact": "9720545915",
+    "address": "Noida sector-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T10:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_242",
+    "name": "SEEMA",
+    "contact": "7838424362",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-28T11:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_243",
+    "name": "RAKHI",
+    "contact": "9205235105",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-28T12:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_244",
+    "name": "TEENA",
+    "contact": "9818736056",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-28T13:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_245",
+    "name": "ANJALI",
+    "contact": "8171904091",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-28T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_246",
+    "name": "SANTANA",
+    "contact": "8851666501",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-28T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_247",
+    "name": "REEMA",
+    "contact": "7908158221",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-28T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_248",
+    "name": "SHANTI",
+    "contact": "8527414814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-28T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_249",
+    "name": "SUMAN",
+    "contact": "8180260973",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_250",
+    "name": "MANDIRA",
+    "contact": "9667585587",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-28T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_251",
+    "name": "NEETU KUMARI",
+    "contact": "9570663184",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_252",
+    "name": "SWATI",
+    "contact": "9773528762",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_253",
+    "name": "VARSHA",
+    "contact": "9625537201",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_254",
+    "name": "MAMUNI",
+    "contact": "9064667714",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-28T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_255",
+    "name": "KARUNA",
+    "contact": "7501506064",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_256",
+    "name": "MUSNAYI",
+    "contact": "7318721149",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_257",
+    "name": "SAVITA SARKAR",
+    "contact": "9354007827",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_258",
+    "name": "ASITA",
+    "contact": "8800531297",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_259",
+    "name": "FOOLDEVI",
+    "contact": "9311358536",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_260",
+    "name": "ASMA",
+    "contact": "9811755279",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_261",
+    "name": "PAYAL",
+    "contact": "8295455882",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_262",
+    "name": "SONAM",
+    "contact": "9354368896",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_263",
+    "name": "POOJA",
+    "contact": "9958433214",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_264",
+    "name": "NISHA",
+    "contact": "9289477893",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_265",
+    "name": "POOJA KUMARI",
+    "contact": "9971828157",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T10:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_266",
+    "name": "SANTOSH",
+    "contact": "9971828157",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T11:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_267",
+    "name": "SITA",
+    "contact": "9217752591",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T12:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_268",
+    "name": "SUNEETA",
+    "contact": "8178351654",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T13:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_269",
+    "name": "SAKHISHI",
+    "contact": "7982025576",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_270",
+    "name": "MUSKAN",
+    "contact": "8376970795",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_271",
+    "name": "VANDANA",
+    "contact": "Not Provided",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_272",
+    "name": "KUSMA",
+    "contact": "7027831817",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_273",
+    "name": "GUDDI",
+    "contact": "8953859568",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_274",
+    "name": "ARJUN",
+    "contact": "8130846566",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_275",
+    "name": "AEISHA",
+    "contact": "8178091658",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_276",
+    "name": "ASHA DEVI",
+    "contact": "882653028",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_277",
+    "name": "SURENDRA DEVI",
+    "contact": "9599869712",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_278",
+    "name": "AAKIMA",
+    "contact": "995342554",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-29T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_279",
+    "name": "SEMA",
+    "contact": "7838347063",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_280",
+    "name": "KHUSBHOO",
+    "contact": "9931152251",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_281",
+    "name": "LAL BANO",
+    "contact": "8744811433",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_282",
+    "name": "ARTI",
+    "contact": "9289062896",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_283",
+    "name": "KACHAN",
+    "contact": "8851544796",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_284",
+    "name": "VANDNA",
+    "contact": "9711404410",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_285",
+    "name": "GOLDEE",
+    "contact": "8545846715",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_286",
+    "name": "POOJA",
+    "contact": "8924811797",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_287",
+    "name": "KHADIJA",
+    "contact": "7063803926",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_288",
+    "name": "FULLADEVI",
+    "contact": "7706966194",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_289",
+    "name": "ANITA",
+    "contact": "8918167030",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T10:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_290",
+    "name": "ROOMA",
+    "contact": "8130846560",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T11:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_291",
+    "name": "KIRTI",
+    "contact": "8427084767",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T12:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_292",
+    "name": "SLEPA",
+    "contact": "7084089915",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T13:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_293",
+    "name": "RANI",
+    "contact": "9217256997",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_294",
+    "name": "KAVITA",
+    "contact": "926659026",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_295",
+    "name": "RADHIKA",
+    "contact": "9196255763",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_296",
+    "name": "RADHIKA",
+    "contact": "7303894897",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_297",
+    "name": "PRIYA",
+    "contact": "9756382311",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_298",
+    "name": "SANJU",
+    "contact": "9315914727",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_299",
+    "name": "CHANCHAL",
+    "contact": "892964030",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_300",
+    "name": "RUBI",
+    "contact": "8510956059",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_301",
+    "name": "VINITA KUMARI",
+    "contact": "Not Provided",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-30T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_302",
+    "name": "ANJALI KUMARI",
+    "contact": "7838826927",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-30T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_303",
+    "name": "SAMVATI",
+    "contact": "6399725347",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_304",
+    "name": "MAYA DEVI",
+    "contact": "8527477614",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_305",
+    "name": "SANGEETA DEVI",
+    "contact": "9667916541",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_306",
+    "name": "VIMALA DEVI",
+    "contact": "7505278993",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_307",
+    "name": "ARTI DEVI",
+    "contact": "9198353912",
+    "address": "Noida sectot-81",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_308",
+    "name": "KUSMAVATI DEVI",
+    "contact": "9953646267",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-31T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_309",
+    "name": "GULSHAN",
+    "contact": "7303630709",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-31T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_310",
+    "name": "ABHILASHA",
+    "contact": "8953431283",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_311",
+    "name": "SHASHI KUMARI",
+    "contact": "7042652491",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_312",
+    "name": "MITHLESH",
+    "contact": "9643278856",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_313",
+    "name": "SARITA",
+    "contact": "Not Provided",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T10:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_314",
+    "name": "JAGITA",
+    "contact": "7827433431",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T11:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_315",
+    "name": "SUKHI DEVI",
+    "contact": "9871824012",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T12:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_316",
+    "name": "RADHA",
+    "contact": "7838953686",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-31T13:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_317",
+    "name": "SEEMA",
+    "contact": "8851321290",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-31T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_318",
+    "name": "SARVESH MATHUR",
+    "contact": "9990289167",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-31T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_319",
+    "name": "SUMAN",
+    "contact": "7065453092",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_320",
+    "name": "REKHA SINGH",
+    "contact": "9559003925",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_321",
+    "name": "SUDHA",
+    "contact": "9711424310",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_322",
+    "name": "CHANDNI DEVI",
+    "contact": "8376970795",
+    "address": "Noida sector 81",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-31T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_323",
+    "name": "SUMAN",
+    "contact": "8448637618",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-10-31T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_324",
+    "name": "SAVITRI",
+    "contact": "9355252891",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_325",
+    "name": "VANDNA",
+    "contact": "9667493238",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_326",
+    "name": "PUSPA",
+    "contact": "7526879654",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-10-31T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_327",
+    "name": "KHUSHBOO",
+    "contact": "9667312406",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_328",
+    "name": "KAMLA",
+    "contact": "8929001545",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-11-01T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_329",
+    "name": "KUSUM",
+    "contact": "Not Provided",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_330",
+    "name": "VEDATI",
+    "contact": "7827504584",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_331",
+    "name": "SONIKA",
+    "contact": "9354368894",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_332",
+    "name": "ARTI",
+    "contact": "9354368894",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_333",
+    "name": "ANITA",
+    "contact": "9289921011",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_334",
+    "name": "PINKI",
+    "contact": "8677018871",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_335",
+    "name": "INDU",
+    "contact": "8377882635",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_336",
+    "name": "BABITA",
+    "contact": "7838102339",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_337",
+    "name": "URMILA",
+    "contact": "8860404924",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T10:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_338",
+    "name": "SUHANI",
+    "contact": "800636801",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T11:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_339",
+    "name": "KRISHNA",
+    "contact": "9667843514",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-11-01T12:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_340",
+    "name": "JHARNA DEVI",
+    "contact": "7928478394",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T13:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_341",
+    "name": "SHIKHA DEVI",
+    "contact": "6287142252",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T14:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_342",
+    "name": "KANCHAN",
+    "contact": "7838834664",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T15:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_343",
+    "name": "SARSWATI",
+    "contact": "9815032215",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T16:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_344",
+    "name": "VANDNA",
+    "contact": "9560895814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T17:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_345",
+    "name": "KOMAL",
+    "contact": "9220868577",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T18:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_346",
+    "name": "LAXMI SARKAR",
+    "contact": "7011708429",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T19:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_347",
+    "name": "SITA VERMA",
+    "contact": "7982025576",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T20:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_348",
+    "name": "LAXMI",
+    "contact": "8130815947",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T21:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_349",
+    "name": "PREETI",
+    "contact": "8287743814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T22:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_350",
+    "name": "MAMATA DEVI",
+    "contact": "9953689893",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-01T23:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_351",
+    "name": "ALINA",
+    "contact": "7303916734",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-02T00:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_352",
+    "name": "SHEELA DEVI",
+    "contact": "9528235377",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-11-02T01:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_353",
+    "name": "POOJA",
+    "contact": "8923733559",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-02T02:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_354",
+    "name": "MOPIYA BANO",
+    "contact": "9548929933",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-02T03:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_355",
+    "name": "AABHA",
+    "contact": "9326515455",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-02T04:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_356",
+    "name": "USHA",
+    "contact": "9560895814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-02T05:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_357",
+    "name": "NANADNI",
+    "contact": "9560895814",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-02T06:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_358",
+    "name": "REKHA",
+    "contact": "9759040909",
+    "address": "Noida sector 101",
+    "initiative": "Gift Distribution",
+    "voter": "Yes",
+    "createdAt": "2026-11-02T07:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_359",
+    "name": "SONAM",
+    "contact": "8171258851",
+    "address": "Noida sector-101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-02T08:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
+  },
+  {
+    "id": "gift_360",
+    "name": "SEENU",
+    "contact": "8171258851",
+    "address": "Noida sector- 101",
+    "initiative": "Gift Distribution",
+    "voter": "No",
+    "createdAt": "2026-11-02T09:31:54.268Z",
+    "isDuplicate": true,
+    "duplicateFields": [
+      "exact",
+      "name",
+      "contact"
+    ],
+    "duplicateReasons": [
+      "Exact Duplicate: Name & Contact appears 2 times"
+    ]
   }
 ]

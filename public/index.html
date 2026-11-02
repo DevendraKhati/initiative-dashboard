@@ -22,7 +22,7 @@
         </div>
         <div class="brand-text">
           <h1>Initiative Central</h1>
-          <span class="subtext">Community &amp; Event Management Portal</span>
+          <span class="subtext">Community, Distribution &amp; Event Portal</span>
         </div>
       </div>
       <div class="header-actions">
@@ -35,7 +35,7 @@
   </header>
 
   <main class="main-content">
-    <!-- Quick Stats Cards (Clicking any card acts as a filter) -->
+    <!-- Quick Stats Cards (6 KPI Cards) -->
     <section class="stats-grid">
       <div class="stat-card active" data-initiative="All" id="statCardAll">
         <div class="stat-icon bg-blue-subtle text-blue">
@@ -91,6 +91,17 @@
         </div>
         <div class="stat-indicator">Youth &amp; Athletics</div>
       </div>
+
+      <div class="stat-card" data-initiative="Gift Distribution" id="statCardGift">
+        <div class="stat-icon bg-rose-subtle text-rose">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">5. Gift Distribution</span>
+          <h2 class="stat-value" id="statGiftCount">0</h2>
+        </div>
+        <div class="stat-indicator">Community Distribution</div>
+      </div>
     </section>
 
     <!-- Filter & Toolbar Section -->
@@ -99,7 +110,7 @@
         <!-- Prominent Initiative Dropdown Filter -->
         <div class="filter-group">
           <label for="initiativeFilter" class="filter-label">
-            <i class="fa-solid fa-filter"></i> Filter by Initiative:
+            <i class="fa-solid fa-filter"></i> Initiative:
           </label>
           <div class="select-wrapper">
             <select id="initiativeFilter" class="custom-select">
@@ -108,6 +119,22 @@
               <option value="Diwali Event">🪔 2. Diwali Event</option>
               <option value="Khatu Shyam">🙏 3. Khatu Shyam</option>
               <option value="Sports Talent">🏆 4. Sports Talent</option>
+              <option value="Gift Distribution">🎁 5. Gift Distribution</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-chevron"></i>
+          </div>
+        </div>
+
+        <!-- Duplicates Filter Dropdown -->
+        <div class="dup-filter-group">
+          <label for="duplicateFilter" class="filter-label">
+            <i class="fa-solid fa-triangle-exclamation"></i> Duplicates:
+          </label>
+          <div class="select-wrapper">
+            <select id="duplicateFilter" class="custom-select-dup">
+              <option value="all">Show All Entries</option>
+              <option value="duplicates_only">⚠️ Duplicates Only</option>
+              <option value="unique_only">✅ Unique Only</option>
             </select>
             <i class="fa-solid fa-chevron-down select-chevron"></i>
           </div>
@@ -119,7 +146,7 @@
           <input 
             type="text" 
             id="searchInput" 
-            placeholder="Search by Name, Contact, Address..." 
+            placeholder="Search Name, Phone, Address..." 
             autocomplete="off"
           />
           <button id="clearSearchBtn" class="clear-search-btn" title="Clear Search">
@@ -160,6 +187,7 @@
       <div class="filter-tag">
         <span id="activeFilterText">Showing: All Initiatives</span>
         <span class="count-badge" id="resultsCountBadge">0 records</span>
+        <span class="count-badge" id="duplicatesCountBadge" style="background:#fee2e2; color:#b91c1c;">0 duplicates</span>
       </div>
       <button id="clearAllFiltersBtn" class="link-btn" style="display: none;">Reset Filters</button>
     </div>
@@ -170,13 +198,15 @@
         <table class="data-table" id="membersTable">
           <thead>
             <tr>
-              <th style="width: 50px;">#</th>
+              <th style="width: 45px;">#</th>
               <th>Member Name</th>
-              <th>Contact Details</th>
+              <th>Contact / Phone</th>
               <th>Address</th>
               <th>Initiative</th>
+              <th>Duplicacy Status</th>
+              <th>Voter</th>
               <th>Date Added</th>
-              <th style="text-align: right; width: 120px;">Actions</th>
+              <th style="text-align: right; width: 100px;">Actions</th>
             </tr>
           </thead>
           <tbody id="tableBody">
@@ -253,7 +283,7 @@
         <!-- Contact Field -->
         <div class="form-group">
           <label for="formContact" class="form-label">
-            Contact Number / Email <span class="required">*</span>
+            Contact Number / Phone <span class="required">*</span>
           </label>
           <div class="input-with-icon">
             <i class="fa-solid fa-phone input-icon"></i>
@@ -261,11 +291,11 @@
               type="text" 
               id="formContact" 
               class="form-input" 
-              placeholder="e.g. +91 98765 43210 or name@domain.com" 
+              placeholder="e.g. 9876543210" 
               required
             />
           </div>
-          <span class="field-error" id="contactError">Please enter contact details (Phone or Email)</span>
+          <span class="field-error" id="contactError">Please enter contact details (Phone)</span>
         </div>
 
         <!-- Address Field -->
@@ -279,14 +309,14 @@
               type="text" 
               id="formAddress" 
               class="form-input" 
-              placeholder="e.g. 104 Civil Lines, Jaipur, Rajasthan" 
+              placeholder="e.g. Noida sector 101" 
               required
             />
           </div>
           <span class="field-error" id="addressError">Please enter a valid address</span>
         </div>
 
-        <!-- Initiative Dropdown Field (4 Initiatives) -->
+        <!-- Initiative Dropdown Field (5 Initiatives) -->
         <div class="form-group">
           <label for="formInitiative" class="form-label">
             Selected Initiative <span class="required">*</span>
@@ -298,10 +328,23 @@
               <option value="Diwali Event">🪔 2. Diwali Event</option>
               <option value="Khatu Shyam">🙏 3. Khatu Shyam</option>
               <option value="Sports Talent">🏆 4. Sports Talent</option>
+              <option value="Gift Distribution">🎁 5. Gift Distribution</option>
             </select>
             <i class="fa-solid fa-chevron-down select-chevron"></i>
           </div>
           <span class="field-error" id="initiativeError">Please select an initiative</span>
+        </div>
+
+        <!-- Voter Field -->
+        <div class="form-group">
+          <label for="formVoter" class="form-label">Voter Status</label>
+          <div class="select-wrapper">
+            <select id="formVoter" class="form-select">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-chevron"></i>
+          </div>
         </div>
 
         <!-- Modal Actions -->
