@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sortOrder: 'desc',
     currentPage: 1,
     pageSize: 10,
-    isEditing: false
+    isEditing: false,
+    lastUpdatedId: null
   };
 
   // DOM Elements
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Fetch Records with current filter, search & sort
-  async function fetchRecords() {
+  async function fetchRecords(preservePage = false) {
     try {
       const params = new URLSearchParams({
         initiative: state.selectedInitiative,
@@ -138,7 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (data.success) {
         state.records = data.records;
-        state.currentPage = 1;
+        const totalPages = Math.ceil(state.records.length / state.pageSize) || 1;
+        if (!preservePage) {
+          state.currentPage = 1;
+        } else {
+          state.currentPage = Math.max(1, Math.min(state.currentPage, totalPages));
+        }
         renderTable();
         updateFilterBar(data.total);
       }
@@ -241,8 +247,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     paginatedRecords.forEach((rec) => {
       const tr = document.createElement('tr');
+      tr.setAttribute('data-record-id', rec.id);
       if (rec.isDuplicate) {
         tr.classList.add('row-duplicate');
+      }
+      if (state.lastUpdatedId === rec.id) {
+        tr.classList.add('row-just-updated');
       }
 
       const cfg = INITIATIVE_CONFIG[rec.initiative] || {
@@ -629,10 +639,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const data = await res.json();
       if (data.success) {
+        state.lastUpdatedId = id;
+
+        // Immediate in-memory update for instant feedback
+        if (data.record) {
+          const idx = state.records.findIndex(r => r.id === id);
+          if (idx !== -1) {
+            state.records[idx] = data.record;
+          }
+        }
+
         showToast(`Updated "${name}" successfully!`, 'success');
         closeModal();
         await fetchStats();
-        await fetchRecords();
+        await fetchRecords(true); // Preserve current page
+
+        // Remove highlight class after animation finishes
+        setTimeout(() => {
+          if (state.lastUpdatedId === id) {
+            state.lastUpdatedId = null;
+            const updatedRow = document.querySelector(`tr[data-record-id="${id}"]`);
+            if (updatedRow) updatedRow.classList.remove('row-just-updated');
+          }
+        }, 3000);
       } else {
         showToast(data.error || 'Failed to update record', 'error');
       }

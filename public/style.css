@@ -1353,3 +1353,23 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Row edit highlight animation */
+.row-just-updated {
+  animation: rowUpdatedGlow 2.5s ease-out;
+  background-color: #ecfdf5 !important;
+}
+
+@keyframes rowUpdatedGlow {
+  0% {
+    background-color: #a7f3d0 !important;
+    transform: scale(1.002);
+  }
+  50% {
+    background-color: #d1fae5 !important;
+  }
+  100% {
+    background-color: #ecfdf5 !important;
+    transform: scale(1);
+  }
+}

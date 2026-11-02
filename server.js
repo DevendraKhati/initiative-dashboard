@@ -265,10 +265,12 @@ app.put('/api/records/:id', (req, res) => {
   records = computeDuplicates(records);
   writeRecords(records);
 
+  const updatedRecord = records.find(r => r.id === id) || records[index];
+
   res.json({
     success: true,
     message: 'Record updated successfully',
-    record: records[index]
+    record: updatedRecord
   });
 });
 
