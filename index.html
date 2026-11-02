@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Initiative Management Dashboard</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --bg-app: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --border-focus: #6366f1;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-subtle: #eef2ff;
+
+      --ram-color: #ea580c;
+      --ram-bg: #fff7ed;
+      --ram-border: #ffedd5;
+
+      --diwali-color: #d97706;
+      --diwali-bg: #fef3c7;
+      --diwali-border: #fde68a;
+
+      --shyam-color: #7c3aed;
+      --shyam-bg: #f5f3ff;
+      --shyam-border: #ede9fe;
+
+      --sports-color: #059669;
+      --sports-bg: #ecfdf5;
+      --sports-border: #d1fae5;
+
+      --danger: #ef4444;
+      --danger-hover: #dc2626;
+      --danger-subtle: #fef2f2;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-modal: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+    }
+    .brand-text h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+    .brand-text .subtext { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .server-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #10b981;
+      background: #ecfdf5;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid #d1fae5;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+      70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    /* Main Container */
+    .main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 28px 24px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Stats Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-md);
+    }
+    .stat-card.active {
+      border-color: var(--primary);
+      background: #fdfdfd;
+      box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15), var(--shadow-sm);
+    }
+    .stat-card.active::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: var(--primary);
+    }
+    .stat-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .stat-info { display: flex; flex-direction: column; gap: 4px; }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .stat-value {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
+    }
+    .stat-indicator {
+      font-size: 11px;
+      color: var(--text-light);
+      font-weight: 500;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 8px;
+    }
+
+    .bg-blue-subtle { background-color: var(--primary-subtle); }
+    .text-blue { color: var(--primary); }
+    .bg-orange-subtle { background-color: var(--ram-bg); }
+    .text-orange { color: var(--ram-color); }
+    .bg-amber-subtle { background-color: var(--diwali-bg); }
+    .text-amber { color: var(--diwali-color); }
+    .bg-purple-subtle { background-color: var(--shyam-bg); }
+    .text-purple { color: var(--shyam-color); }
+    .bg-green-subtle { background-color: var(--sports-bg); }
+    .text-green { color: var(--sports-color); }
+
+    /* Toolbar Section */
+    .toolbar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow-sm);
+    }
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      flex: 1;
+      min-width: 320px;
+    }
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .filter-group { display: flex; align-items: center; gap: 10px; }
+    .filter-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .select-wrapper { position: relative; display: inline-block; }
+    .custom-select {
+      appearance: none;
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 9px 38px 9px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+      min-width: 220px;
+    }
+    .custom-select:hover { border-color: #cbd5e1; background: #ffffff; }
+    .custom-select:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+      background: #ffffff;
+    }
+    .select-chevron {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 11px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .search-group {
+      position: relative;
+      flex: 1;
+      max-width: 380px;
+      min-width: 220px;
+    }
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      font-size: 14px;
+    }
+    .search-group input {
+      width: 100%;
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 9px 36px 9px 38px;
+      font-size: 14px;
+      color: var(--text-main);
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    .search-group input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-light);
+      cursor: pointer;
+      font-size: 13px;
+      display: none;
+      padding: 4px;
+    }
+    .clear-search-btn:hover { color: var(--text-main); }
+
+    .sort-group { display: flex; align-items: center; gap: 8px; }
+    .sort-label { font-size: 13px; font-weight: 500; color: var(--text-muted); }
+    .custom-select-small {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-main);
+      cursor: pointer;
+      font-family: inherit;
+      outline: none;
+    }
+    .custom-select-small:focus { border-color: var(--border-focus); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3);
+    }
+    .btn-secondary {
+      background-color: #ffffff;
+      border-color: var(--border-color);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover {
+      background-color: #f8fafc;
+      border-color: #cbd5e1;
+    }
+    .btn-outline {
+      background: transparent;
+      border-color: #cbd5e1;
+      color: var(--text-muted);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+    }
+    .btn-danger {
+      background-color: var(--danger);
+      color: #ffffff;
+    }
+    .btn-danger:hover { background-color: var(--danger-hover); }
+
+    .active-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 4px;
+    }
+    .filter-tag {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .count-badge {
+      background: #e2e8f0;
+      color: var(--text-main);
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+    .link-btn {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    /* Table */
+    .table-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .table-responsive { width: 100%; overflow-x: auto; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+    .data-table th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+    .data-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+      vertical-align: middle;
+    }
+    .data-table tbody tr:hover { background-color: #f8fafc; }
+
+    .member-cell { display: flex; align-items: center; gap: 12px; }
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .member-info { display: flex; flex-direction: column; }
+    .member-name { font-weight: 600; color: var(--text-main); }
+    .member-id { font-size: 11px; color: var(--text-light); font-family: monospace; }
+
+    .contact-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      color: #334155;
+    }
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--text-light);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .data-table tr:hover .copy-btn { opacity: 1; }
+    .copy-btn:hover { color: var(--primary); background: var(--primary-subtle); }
+
+    .address-cell {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--text-muted);
+      max-width: 320px;
+    }
+    .address-icon {
+      margin-top: 3px;
+      color: var(--text-light);
+      flex-shrink: 0;
+      font-size: 12px;
+    }
+
+    .initiative-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .badge-ram { background-color: var(--ram-bg); color: var(--ram-color); border: 1px solid var(--ram-border); }
+    .badge-diwali { background-color: var(--diwali-bg); color: var(--diwali-color); border: 1px solid var(--diwali-border); }
+    .badge-shyam { background-color: var(--shyam-bg); color: var(--shyam-color); border: 1px solid var(--shyam-border); }
+    .badge-sports { background-color: var(--sports-bg); color: var(--sports-color); border: 1px solid var(--sports-border); }
+
+    .date-cell { color: var(--text-muted); font-size: 13px; white-space: nowrap; }
+    .action-buttons { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
+    .btn-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 13px;
+    }
+    .btn-icon:hover { background-color: #f8fafc; color: var(--primary); border-color: #cbd5e1; }
+    .btn-icon.delete:hover { background-color: var(--danger-subtle); color: var(--danger); border-color: #fca5a5; }
+
+    .empty-state {
+      padding: 60px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .empty-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .table-footer {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      background: #fafafa;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-info { font-size: 13px; color: var(--text-muted); }
+    .pagination-controls { display: flex; align-items: center; gap: 6px; }
+    .btn-page {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-page:hover:not(:disabled) { background: #f8fafc; border-color: #cbd5e1; }
+    .btn-page:disabled { opacity: 0.5; cursor: not-allowed; }
+    .page-numbers { display: flex; align-items: center; gap: 4px; }
+    .page-num {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-main);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .page-num:hover { background: #f1f5f9; }
+    .page-num.active { background: var(--primary); color: #ffffff; }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 520px;
+      box-shadow: var(--shadow-modal);
+      transform: scale(0.96);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow: hidden;
+    }
+    .modal-overlay.open .modal-card { transform: scale(1); }
+    .modal-small { max-width: 440px; }
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-title-wrapper { display: flex; align-items: center; gap: 12px; }
+    .modal-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: var(--primary-subtle);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .modal-header h2 { font-size: 18px; font-weight: 700; color: var(--text-main); }
+    .modal-subtitle { font-size: 12px; color: var(--text-muted); }
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--text-light);
+      cursor: pointer;
+      padding: 4px;
+    }
+    .modal-close:hover { color: var(--text-main); }
+
+    #recordForm {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 13px; font-weight: 600; color: var(--text-main); }
+    .form-label .required { color: var(--danger); }
+    .input-with-icon { position: relative; display: flex; align-items: center; }
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      background: #ffffff;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 10px 14px 10px 40px;
+      font-size: 14px;
+      color: var(--text-main);
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    .form-select { padding-left: 14px; appearance: none; cursor: pointer; }
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+    .field-error { font-size: 12px; color: var(--danger); display: none; margin-top: 2px; }
+    .form-group.has-error .form-input,
+    .form-group.has-error .form-select { border-color: var(--danger); }
+    .form-group.has-error .field-error { display: block; }
+    .modal-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .modal-body-content { padding: 20px 24px; color: var(--text-muted); font-size: 14px; }
+    .modal-body-content strong { color: var(--text-main); }
+
+    /* Toast */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .toast {
+      background: #1e293b;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      pointer-events: auto;
+      animation: slideInRight 0.3s ease;
+      min-width: 260px;
+      max-width: 380px;
+    }
+    .toast.success { border-left: 4px solid #10b981; }
+    .toast.error { border-left: 4px solid #ef4444; }
+    .toast.info { border-left: 4px solid var(--primary); }
+    .toast.success i { color: #10b981; }
+    .toast.error i { color: #ef4444; }
+    .toast.info i { color: #6366f1; }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 1200px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .toolbar-card { flex-direction: column; align-items: stretch; }
+      .toolbar-left, .toolbar-right { flex-direction: column; align-items: stretch; }
+      .search-group { max-width: 100%; }
+      .custom-select { width: 100%; }
+      .header-actions { flex-direction: column; align-items: flex-end; }
+    }
+    @media (max-width: 500px) { .stats-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-shapes"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Initiative Central</h1>
+          <span class="subtext">Community &amp; Event Management Portal</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="addRecordBtn" class="btn btn-primary">
+          <i class="fa-solid fa-plus"></i>
+          <span>Add Member</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Quick Stats Cards -->
+    <section class="stats-grid">
+      <div class="stat-card active" data-initiative="All" id="statCardAll">
+        <div class="stat-icon bg-blue-subtle text-blue">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Total Entries</span>
+          <h2 class="stat-value" id="statTotalCount">0</h2>
+        </div>
+        <div class="stat-indicator">All Initiatives</div>
+      </div>
+
+      <div class="stat-card" data-initiative="Apne Apne Ram" id="statCardRam">
+        <div class="stat-icon bg-orange-subtle text-orange">
+          <i class="fa-solid fa-om"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">1. Apne Apne Ram</span>
+          <h2 class="stat-value" id="statRamCount">0</h2>
+        </div>
+        <div class="stat-indicator">Cultural &amp; Spiritual</div>
+      </div>
+
+      <div class="stat-card" data-initiative="Diwali Event" id="statCardDiwali">
+        <div class="stat-icon bg-amber-subtle text-amber">
+          <i class="fa-solid fa-fire"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">2. Diwali Event</span>
+          <h2 class="stat-value" id="statDiwaliCount">0</h2>
+        </div>
+        <div class="stat-indicator">Festival Celebration</div>
+      </div>
+
+      <div class="stat-card" data-initiative="Khatu Shyam" id="statCardShyam">
+        <div class="stat-icon bg-purple-subtle text-purple">
+          <i class="fa-solid fa-hands-praying"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">3. Khatu Shyam</span>
+          <h2 class="stat-value" id="statShyamCount">0</h2>
+        </div>
+        <div class="stat-indicator">Devotional Yatra</div>
+      </div>
+
+      <div class="stat-card" data-initiative="Sports Talent" id="statCardSports">
+        <div class="stat-icon bg-green-subtle text-green">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">4. Sports Talent</span>
+          <h2 class="stat-value" id="statSportsCount">0</h2>
+        </div>
+        <div class="stat-indicator">Youth &amp; Athletics</div>
+      </div>
+    </section>
+
+    <!-- Filter & Toolbar Section -->
+    <section class="toolbar-card">
+      <div class="toolbar-left">
+        <!-- Dropdown Filter for 4 Initiatives -->
+        <div class="filter-group">
+          <label for="initiativeFilter" class="filter-label">
+            <i class="fa-solid fa-filter"></i> Filter by Initiative:
+          </label>
+          <div class="select-wrapper">
+            <select id="initiativeFilter" class="custom-select">
+              <option value="All">✨ All Initiatives</option>
+              <option value="Apne Apne Ram">🚩 1. Apne Apne Ram</option>
+              <option value="Diwali Event">🪔 2. Diwali Event</option>
+              <option value="Khatu Shyam">🙏 3. Khatu Shyam</option>
+              <option value="Sports Talent">🏆 4. Sports Talent</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-chevron"></i>
+          </div>
+        </div>
+
+        <!-- Search Input -->
+        <div class="search-group">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search Name, Contact, Address..." 
+            autocomplete="off"
+          />
+          <button id="clearSearchBtn" class="clear-search-btn" title="Clear Search">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="toolbar-right">
+        <!-- Sort Dropdown -->
+        <div class="sort-group">
+          <label for="sortBy" class="sort-label">Sort:</label>
+          <select id="sortBy" class="custom-select-small">
+            <option value="createdAt_desc">Newest First</option>
+            <option value="createdAt_asc">Oldest First</option>
+            <option value="name_asc">Name (A-Z)</option>
+            <option value="name_desc">Name (Z-A)</option>
+            <option value="initiative_asc">Initiative</option>
+          </select>
+        </div>
+
+        <!-- Export CSV Button -->
+        <button id="exportCsvBtn" class="btn btn-secondary">
+          <i class="fa-solid fa-file-csv"></i>
+          <span>Export CSV</span>
+        </button>
+
+        <!-- Reset Seed Data Button -->
+        <button id="resetDataBtn" class="btn btn-outline">
+          <i class="fa-solid fa-rotate-right"></i>
+          <span>Reset Sample</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Active Filter Bar -->
+    <div class="active-filter-bar" id="activeFilterBar">
+      <div class="filter-tag">
+        <span id="activeFilterText">Showing: All Initiatives</span>
+        <span class="count-badge" id="resultsCountBadge">0 records</span>
+      </div>
+      <button id="clearAllFiltersBtn" class="link-btn" style="display: none;">Reset Filters</button>
+    </div>
+
+    <!-- Data Table Card -->
+    <section class="table-container">
+      <div class="table-responsive">
+        <table class="data-table" id="membersTable">
+          <thead>
+            <tr>
+              <th style="width: 50px;">#</th>
+              <th>Member Name</th>
+              <th>Contact Details</th>
+              <th>Address</th>
+              <th>Initiative</th>
+              <th>Date Added</th>
+              <th style="text-align: right; width: 120px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-icon">
+          <i class="fa-solid fa-folder-open"></i>
+        </div>
+        <h3>No matching records found</h3>
+        <p>No members match the current filter or search criteria.</p>
+        <button class="btn btn-primary" id="emptyStateResetBtn">Clear Filters</button>
+      </div>
+
+      <!-- Table Footer / Pagination -->
+      <div class="table-footer">
+        <div class="footer-info" id="paginationInfo">Showing 1 to 10 of 13 entries</div>
+        <div class="pagination-controls">
+          <button id="prevPageBtn" class="btn-page" disabled>
+            <i class="fa-solid fa-angle-left"></i> Previous
+          </button>
+          <div class="page-numbers" id="pageNumbers"></div>
+          <button id="nextPageBtn" class="btn-page">
+            Next <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add / Edit Modal -->
+  <div class="modal-overlay" id="recordModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <div class="modal-icon">
+            <i class="fa-solid fa-user-plus" id="modalIcon"></i>
+          </div>
+          <div>
+            <h2 id="modalTitle">Add New Member</h2>
+            <p class="modal-subtitle">Enter details to enroll into an initiative</p>
+          </div>
+        </div>
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+      </div>
+
+      <form id="recordForm" novalidate>
+        <input type="hidden" id="recordId" value="">
+
+        <div class="form-group">
+          <label for="formName" class="form-label">Full Name <span class="required">*</span></label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input type="text" id="formName" class="form-input" placeholder="e.g. Ramesh Kumar" required />
+          </div>
+          <span class="field-error" id="nameError">Please enter a valid full name</span>
+        </div>
+
+        <div class="form-group">
+          <label for="formContact" class="form-label">Contact Details <span class="required">*</span></label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-phone input-icon"></i>
+            <input type="text" id="formContact" class="form-input" placeholder="e.g. +91 98765 43210 or name@domain.com" required />
+          </div>
+          <span class="field-error" id="contactError">Please enter contact details (Phone or Email)</span>
+        </div>
+
+        <div class="form-group">
+          <label for="formAddress" class="form-label">Address <span class="required">*</span></label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-location-dot input-icon"></i>
+            <input type="text" id="formAddress" class="form-input" placeholder="e.g. 104 Civil Lines, Jaipur, Rajasthan" required />
+          </div>
+          <span class="field-error" id="addressError">Please enter a valid address</span>
+        </div>
+
+        <div class="form-group">
+          <label for="formInitiative" class="form-label">Selected Initiative <span class="required">*</span></label>
+          <div class="select-wrapper">
+            <select id="formInitiative" class="form-select" required>
+              <option value="" disabled selected>-- Select an Initiative --</option>
+              <option value="Apne Apne Ram">🚩 1. Apne Apne Ram</option>
+              <option value="Diwali Event">🪔 2. Diwali Event</option>
+              <option value="Khatu Shyam">🙏 3. Khatu Shyam</option>
+              <option value="Sports Talent">🏆 4. Sports Talent</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-chevron"></i>
+          </div>
+          <span class="field-error" id="initiativeError">Please select an initiative</span>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveRecordBtn">
+            <i class="fa-solid fa-check"></i>
+            <span id="saveBtnText">Save Record</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal-card modal-small">
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <div class="modal-icon" style="background:#fee2e2; color:#ef4444;">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+          <div>
+            <h2>Confirm Delete</h2>
+            <p class="modal-subtitle">Are you sure you want to remove this record?</p>
+          </div>
+        </div>
+        <button class="modal-close" id="closeDeleteModalBtn">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <p>This action will permanently remove <strong id="deleteTargetName"></strong>.</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+          <i class="fa-solid fa-trash"></i> Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    // Initial Seed Data for the 4 Initiatives
+    const INITIAL_RECORDS = [
+      { id: "rec_001", name: "Rahul Sharma", contact: "+91 98765 43210", address: "142 Civil Lines, Jaipur, Rajasthan", initiative: "Apne Apne Ram", createdAt: "2026-10-15T10:30:00.000Z" },
+      { id: "rec_002", name: "Priya Verma", contact: "+91 98112 34567", address: "Flat 402, Shanti Kunj, Ayodhya, Uttar Pradesh", initiative: "Apne Apne Ram", createdAt: "2026-10-18T14:15:00.000Z" },
+      { id: "rec_003", name: "Manoj Tiwary", contact: "+91 97234 56789", address: "56 Ram Ghat Marg, Haridwar, Uttarakhand", initiative: "Apne Apne Ram", createdAt: "2026-10-22T09:00:00.000Z" },
+      { id: "rec_004", name: "Ananya Gupta", contact: "+91 99887 76655", address: "78 Park Street, Kolkata, West Bengal", initiative: "Diwali Event", createdAt: "2026-10-25T11:45:00.000Z" },
+      { id: "rec_005", name: "Rajesh Agrawal", contact: "+91 94123 78901", address: "12 Chandni Chowk, New Delhi, Delhi", initiative: "Diwali Event", createdAt: "2026-10-26T16:20:00.000Z" },
+      { id: "rec_006", name: "Sneha Kulkarni", contact: "+91 96543 21098", address: "23 Deccan Gymkhana, Pune, Maharashtra", initiative: "Diwali Event", createdAt: "2026-10-27T18:00:00.000Z" },
+      { id: "rec_007", name: "Vikram Singh", contact: "+91 91234 56780", address: "Ward 12, Ringas Road, Sikar, Rajasthan", initiative: "Khatu Shyam", createdAt: "2026-10-28T08:30:00.000Z" },
+      { id: "rec_008", name: "Meera Joshi", contact: "+91 98321 45678", address: "89 Malviya Nagar, Alwar, Rajasthan", initiative: "Khatu Shyam", createdAt: "2026-10-29T12:10:00.000Z" },
+      { id: "rec_009", name: "Sanjay Bansal", contact: "+91 95432 10987", address: "34 Shyam Vatika, Mathura, Uttar Pradesh", initiative: "Khatu Shyam", createdAt: "2026-10-30T15:40:00.000Z" },
+      { id: "rec_010", name: "Arjun Yadav", contact: "+91 98711 22334", address: "Sector 15 Sports Complex, Chandigarh, Punjab", initiative: "Sports Talent", createdAt: "2026-10-31T07:45:00.000Z" },
+      { id: "rec_011", name: "Kavita Deshmukh", contact: "+91 93456 78901", address: "105 Shivaji Nagar, Nagpur, Maharashtra", initiative: "Sports Talent", createdAt: "2026-11-01T10:00:00.000Z" },
+      { id: "rec_012", name: "Rohit Nair", contact: "+91 99456 12345", address: "42 Marine Drive, Kochi, Kerala", initiative: "Sports Talent", createdAt: "2026-11-01T14:30:00.000Z" },
+      { id: "rec_013", name: "Divya Chaudhary", contact: "+91 97123 89012", address: "18 Stadium Road, Meerut, Uttar Pradesh", initiative: "Sports Talent", createdAt: "2026-11-02T09:15:00.000Z" }
+    ];
+
+    const STORAGE_KEY = 'initiative_dashboard_records';
+
+    function getStoredRecords() {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (!stored) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_RECORDS));
+        return INITIAL_RECORDS;
+      }
+      try {
+        return JSON.parse(stored);
+      } catch {
+        return INITIAL_RECORDS;
+      }
+    }
+
+    function saveStoredRecords(data) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    const state = {
+      allRecords: getStoredRecords(),
+      filteredRecords: [],
+      selectedInitiative: 'All',
+      searchQuery: '',
+      sortBy: 'createdAt',
+      sortOrder: 'desc',
+      currentPage: 1,
+      pageSize: 8,
+      deleteTargetId: null,
+      isEditing: false
+    };
+
+    const initiativeFilter = document.getElementById('initiativeFilter');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const sortBySelect = document.getElementById('sortBy');
+    const tableBody = document.getElementById('tableBody');
+    const emptyState = document.getElementById('emptyState');
+    const emptyStateResetBtn = document.getElementById('emptyStateResetBtn');
+    const activeFilterText = document.getElementById('activeFilterText');
+    const resultsCountBadge = document.getElementById('resultsCountBadge');
+    const clearAllFiltersBtn = document.getElementById('clearAllFiltersBtn');
+    const paginationInfo = document.getElementById('paginationInfo');
+    const prevPageBtn = document.getElementById('prevPageBtn');
+    const nextPageBtn = document.getElementById('nextPageBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    const statTotalCount = document.getElementById('statTotalCount');
+    const statRamCount = document.getElementById('statRamCount');
+    const statDiwaliCount = document.getElementById('statDiwaliCount');
+    const statShyamCount = document.getElementById('statShyamCount');
+    const statSportsCount = document.getElementById('statSportsCount');
+    const statCards = document.querySelectorAll('.stat-card');
+
+    const recordModal = document.getElementById('recordModal');
+    const recordForm = document.getElementById('recordForm');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalIcon = document.getElementById('modalIcon');
+    const saveBtnText = document.getElementById('saveBtnText');
+    const addRecordBtn = document.getElementById('addRecordBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const cancelModalBtn = document.getElementById('cancelModalBtn');
+
+    const recordIdInput = document.getElementById('recordId');
+    const formName = document.getElementById('formName');
+    const formContact = document.getElementById('formContact');
+    const formAddress = document.getElementById('formAddress');
+    const formInitiative = document.getElementById('formInitiative');
+
+    const deleteModal = document.getElementById('deleteModal');
+    const deleteTargetName = document.getElementById('deleteTargetName');
+    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+    const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+    const closeDeleteModalBtn = document.getElementById('closeDeleteModalBtn');
+
+    const exportCsvBtn = document.getElementById('exportCsvBtn');
+    const resetDataBtn = document.getElementById('resetDataBtn');
+    const toastContainer = document.getElementById('toastContainer');
+
+    const INITIATIVE_CONFIG = {
+      'Apne Apne Ram': { class: 'badge-ram', icon: 'fa-om' },
+      'Diwali Event': { class: 'badge-diwali', icon: 'fa-fire' },
+      'Khatu Shyam': { class: 'badge-shyam', icon: 'fa-hands-praying' },
+      'Sports Talent': { class: 'badge-sports', icon: 'fa-trophy' }
+    };
+
+    function showToast(message, type = 'info') {
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      let icon = type === 'success' ? 'fa-circle-check' : (type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-info');
+      toast.innerHTML = `<i class="fa-solid ${icon}"></i><span>${message}</span>`;
+      toastContainer.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    function updateStats() {
+      const total = state.allRecords.length;
+      let ram = 0, diwali = 0, shyam = 0, sports = 0;
+      state.allRecords.forEach(r => {
+        if (r.initiative === 'Apne Apne Ram') ram++;
+        else if (r.initiative === 'Diwali Event') diwali++;
+        else if (r.initiative === 'Khatu Shyam') shyam++;
+        else if (r.initiative === 'Sports Talent') sports++;
+      });
+      statTotalCount.textContent = total;
+      statRamCount.textContent = ram;
+      statDiwaliCount.textContent = diwali;
+      statShyamCount.textContent = shyam;
+      statSportsCount.textContent = sports;
+    }
+
+    function applyFilterAndSort() {
+      let list = [...state.allRecords];
+
+      if (state.selectedInitiative !== 'All') {
+        list = list.filter(r => r.initiative === state.selectedInitiative);
+      }
+
+      if (state.searchQuery.trim() !== '') {
+        const q = state.searchQuery.trim().toLowerCase();
+        list = list.filter(r => 
+          (r.name && r.name.toLowerCase().includes(q)) ||
+          (r.contact && r.contact.toLowerCase().includes(q)) ||
+          (r.address && r.address.toLowerCase().includes(q)) ||
+          (r.initiative && r.initiative.toLowerCase().includes(q))
+        );
+      }
+
+      list.sort((a, b) => {
+        let fieldA = (a[state.sortBy] || '').toString().toLowerCase();
+        let fieldB = (b[state.sortBy] || '').toString().toLowerCase();
+        if (state.sortBy === 'createdAt') {
+          fieldA = new Date(a.createdAt).getTime();
+          fieldB = new Date(b.createdAt).getTime();
+        }
+        if (fieldA < fieldB) return state.sortOrder === 'asc' ? -1 : 1;
+        if (fieldA > fieldB) return state.sortOrder === 'asc' ? 1 : -1;
+        return 0;
+      });
+
+      state.filteredRecords = list;
+      renderTable();
+      updateFilterBar();
+    }
+
+    function updateFilterBar() {
+      const count = state.filteredRecords.length;
+      resultsCountBadge.textContent = `${count} ${count === 1 ? 'record' : 'records'}`;
+      if (state.selectedInitiative !== 'All' || state.searchQuery.trim() !== '') {
+        let label = state.selectedInitiative !== 'All' ? `Initiative: "${state.selectedInitiative}"` : 'All Initiatives';
+        if (state.searchQuery.trim()) label += ` matching "${state.searchQuery}"`;
+        activeFilterText.textContent = `Showing: ${label}`;
+        clearAllFiltersBtn.style.display = 'inline-block';
+      } else {
+        activeFilterText.textContent = 'Showing: All Initiatives';
+        clearAllFiltersBtn.style.display = 'none';
+      }
+    }
+
+    function getInitials(name) {
+      if (!name) return '??';
+      const parts = name.trim().split(' ');
+      if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+      return parts[0].substring(0, 2).toUpperCase();
+    }
+
+    function formatDate(isoStr) {
+      if (!isoStr) return 'N/A';
+      try {
+        return new Date(isoStr).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+      } catch { return isoStr; }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+    }
+
+    function renderTable() {
+      tableBody.innerHTML = '';
+      if (state.filteredRecords.length === 0) {
+        emptyState.style.display = 'flex';
+        document.querySelector('.table-footer').style.display = 'none';
+        return;
+      }
+      emptyState.style.display = 'none';
+      document.querySelector('.table-footer').style.display = 'flex';
+
+      const total = state.filteredRecords.length;
+      const totalPages = Math.ceil(total / state.pageSize) || 1;
+      if (state.currentPage > totalPages) state.currentPage = totalPages;
+
+      const start = (state.currentPage - 1) * state.pageSize;
+      const end = Math.min(start + state.pageSize, total);
+      const pageData = state.filteredRecords.slice(start, end);
+
+      pageData.forEach(rec => {
+        const tr = document.createElement('tr');
+        const cfg = INITIATIVE_CONFIG[rec.initiative] || { class: 'badge-ram', icon: 'fa-tag' };
+        tr.innerHTML = `
+          <td><div class="avatar">${getInitials(rec.name)}</div></td>
+          <td>
+            <div class="member-info">
+              <span class="member-name">${escapeHtml(rec.name)}</span>
+              <span class="member-id">${rec.id}</span>
+            </div>
+          </td>
+          <td>
+            <div class="contact-cell">
+              <i class="fa-solid fa-phone" style="font-size:12px;color:var(--text-light);"></i>
+              <span>${escapeHtml(rec.contact)}</span>
+              <button class="copy-btn" data-copy="${escapeHtml(rec.contact)}" title="Copy Contact">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+          </td>
+          <td>
+            <div class="address-cell">
+              <i class="fa-solid fa-location-dot address-icon"></i>
+              <span>${escapeHtml(rec.address)}</span>
+            </div>
+          </td>
+          <td>
+            <span class="initiative-badge ${cfg.class}">
+              <i class="fa-solid ${cfg.icon}"></i>
+              <span>${escapeHtml(rec.initiative)}</span>
+            </span>
+          </td>
+          <td><span class="date-cell">${formatDate(rec.createdAt)}</span></td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-icon edit" data-id="${rec.id}" title="Edit Member"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="btn-icon delete" data-id="${rec.id}" data-name="${escapeHtml(rec.name)}" title="Delete Member"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+          </td>
+        `;
+        tableBody.appendChild(tr);
+      });
+
+      paginationInfo.textContent = `Showing ${start + 1} to ${end} of ${total} entries`;
+      prevPageBtn.disabled = state.currentPage <= 1;
+      nextPageBtn.disabled = state.currentPage >= totalPages;
+
+      pageNumbers.innerHTML = '';
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.className = `page-num ${i === state.currentPage ? 'active' : ''}`;
+        btn.textContent = i;
+        btn.onclick = () => { state.currentPage = i; renderTable(); };
+        pageNumbers.appendChild(btn);
+      }
+    }
+
+    function setInitiativeFilter(init) {
+      state.selectedInitiative = init;
+      initiativeFilter.value = init;
+      statCards.forEach(c => {
+        if (c.dataset.initiative === init) c.classList.add('active');
+        else c.classList.remove('active');
+      });
+      state.currentPage = 1;
+      applyFilterAndSort();
+    }
+
+    initiativeFilter.addEventListener('change', e => setInitiativeFilter(e.target.value));
+    statCards.forEach(card => card.addEventListener('click', () => setInitiativeFilter(card.dataset.initiative)));
+
+    let searchTimer;
+    searchInput.addEventListener('input', e => {
+      state.searchQuery = e.target.value;
+      clearSearchBtn.style.display = state.searchQuery ? 'block' : 'none';
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => { state.currentPage = 1; applyFilterAndSort(); }, 200);
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      state.searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      state.currentPage = 1;
+      applyFilterAndSort();
+    });
+
+    sortBySelect.addEventListener('change', e => {
+      const [f, o] = e.target.value.split('_');
+      state.sortBy = f; state.sortOrder = o;
+      applyFilterAndSort();
+    });
+
+    function resetFilters() {
+      searchInput.value = '';
+      state.searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      setInitiativeFilter('All');
+    }
+    clearAllFiltersBtn.addEventListener('click', resetFilters);
+    emptyStateResetBtn.addEventListener('click', resetFilters);
+
+    prevPageBtn.addEventListener('click', () => { if (state.currentPage > 1) { state.currentPage--; renderTable(); } });
+    nextPageBtn.addEventListener('click', () => {
+      const totalPages = Math.ceil(state.filteredRecords.length / state.pageSize);
+      if (state.currentPage < totalPages) { state.currentPage++; renderTable(); }
+    });
+
+    tableBody.addEventListener('click', e => {
+      const copyBtn = e.target.closest('.copy-btn');
+      if (copyBtn) {
+        navigator.clipboard.writeText(copyBtn.dataset.copy).then(() => showToast(`Copied "${copyBtn.dataset.copy}"`, 'success'));
+        return;
+      }
+      const editBtn = e.target.closest('.btn-icon.edit');
+      if (editBtn) {
+        const rec = state.allRecords.find(r => r.id === editBtn.dataset.id);
+        if (rec) {
+          state.isEditing = true;
+          modalTitle.textContent = 'Edit Member Details';
+          saveBtnText.textContent = 'Update Record';
+          recordIdInput.value = rec.id;
+          formName.value = rec.name;
+          formContact.value = rec.contact;
+          formAddress.value = rec.address;
+          formInitiative.value = rec.initiative;
+          recordModal.classList.add('open');
+        }
+        return;
+      }
+      const delBtn = e.target.closest('.btn-icon.delete');
+      if (delBtn) {
+        state.deleteTargetId = delBtn.dataset.id;
+        deleteTargetName.textContent = delBtn.dataset.name;
+        deleteModal.classList.add('open');
+      }
+    });
+
+    addRecordBtn.addEventListener('click', () => {
+      state.isEditing = false;
+      modalTitle.textContent = 'Add New Member';
+      saveBtnText.textContent = 'Save Record';
+      recordForm.reset();
+      recordIdInput.value = '';
+      if (state.selectedInitiative !== 'All') formInitiative.value = state.selectedInitiative;
+      recordModal.classList.add('open');
+    });
+
+    closeModalBtn.addEventListener('click', () => recordModal.classList.remove('open'));
+    cancelModalBtn.addEventListener('click', () => recordModal.classList.remove('open'));
+    closeDeleteModalBtn.addEventListener('click', () => deleteModal.classList.remove('open'));
+    cancelDeleteBtn.addEventListener('click', () => deleteModal.classList.remove('open'));
+
+    recordForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = formName.value.trim();
+      const contact = formContact.value.trim();
+      const address = formAddress.value.trim();
+      const initiative = formInitiative.value;
+      if (!name || !contact || !address || !initiative) {
+        showToast('Please fill all required fields', 'error');
+        return;
+      }
+
+      if (state.isEditing && recordIdInput.value) {
+        const idx = state.allRecords.findIndex(r => r.id === recordIdInput.value);
+        if (idx !== -1) {
+          state.allRecords[idx] = { ...state.allRecords[idx], name, contact, address, initiative };
+          showToast(`Updated "${name}" successfully`, 'success');
+        }
+      } else {
+        const newRecord = {
+          id: `rec_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
+          name, contact, address, initiative,
+          createdAt: new Date().toISOString()
+        };
+        state.allRecords.unshift(newRecord);
+        showToast(`Added "${name}" to ${initiative}`, 'success');
+      }
+      saveStoredRecords(state.allRecords);
+      recordModal.classList.remove('open');
+      updateStats();
+      applyFilterAndSort();
+    });
+
+    confirmDeleteBtn.addEventListener('click', () => {
+      if (!state.deleteTargetId) return;
+      state.allRecords = state.allRecords.filter(r => r.id !== state.deleteTargetId);
+      saveStoredRecords(state.allRecords);
+      deleteModal.classList.remove('open');
+      showToast('Record deleted successfully', 'success');
+      updateStats();
+      applyFilterAndSort();
+    });
+
+    exportCsvBtn.addEventListener('click', () => {
+      const header = ['ID', 'Name', 'Contact', 'Address', 'Initiative', 'Created At'];
+      const rows = state.allRecords.map(r => [
+        `"${r.id}"`, `"${r.name.replace(/"/g, '""')}"`, `"${r.contact.replace(/"/g, '""')}"`,
+        `"${r.address.replace(/"/g, '""')}"`, `"${r.initiative.replace(/"/g, '""')}"`, `"${r.createdAt}"`
+      ]);
+      const csv = [header.join(','), ...rows.map(row => row.join(','))].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'initiatives_members.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast('Exported CSV successfully', 'info');
+    });
+
+    resetDataBtn.addEventListener('click', () => {
+      if (!confirm('Reset all records back to default sample data?')) return;
+      state.allRecords = [...INITIAL_RECORDS];
+      saveStoredRecords(state.allRecords);
+      resetFilters();
+      updateStats();
+      applyFilterAndSort();
+      showToast('Sample dataset restored', 'success');
+    });
+
+    // Start
+    updateStats();
+    applyFilterAndSort();
+  </script>
+</body>
+</html>

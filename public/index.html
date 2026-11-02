@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Initiative Management Dashboard</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-shapes"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Initiative Central</h1>
+          <span class="subtext">Community &amp; Event Management Portal</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="addRecordBtn" class="btn btn-primary">
+          <i class="fa-solid fa-plus"></i>
+          <span>Add Member</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Quick Stats Cards (Clicking any card acts as a filter) -->
+    <section class="stats-grid">
+      <div class="stat-card active" data-initiative="All" id="statCardAll">
+        <div class="stat-icon bg-blue-subtle text-blue">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Total Entries</span>
+          <h2 class="stat-value" id="statTotalCount">0</h2>
+        </div>
+        <div class="stat-indicator">All Initiatives</div>
+      </div>
+
+      <div class="stat-card" data-initiative="Apne Apne Ram" id="statCardRam">
+        <div class="stat-icon bg-orange-subtle text-orange">
+          <i class="fa-solid fa-om"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">1. Apne Apne Ram</span>
+          <h2 class="stat-value" id="statRamCount">0</h2>
+        </div>
+        <div class="stat-indicator">Cultural &amp; Spiritual</div>
+      </div>
+
+      <div class="stat-card" data-initiative="Diwali Event" id="statCardDiwali">
+        <div class="stat-icon bg-amber-subtle text-amber">
+          <i class="fa-solid fa-fire"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">2. Diwali Event</span>
+          <h2 class="stat-value" id="statDiwaliCount">0</h2>
+        </div>
+        <div class="stat-indicator">Festival Celebration</div>
+      </div>
+
+      <div class="stat-card" data-initiative="Khatu Shyam" id="statCardShyam">
+        <div class="stat-icon bg-purple-subtle text-purple">
+          <i class="fa-solid fa-hands-praying"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">3. Khatu Shyam</span>
+          <h2 class="stat-value" id="statShyamCount">0</h2>
+        </div>
+        <div class="stat-indicator">Devotional Yatra</div>
+      </div>
+
+      <div class="stat-card" data-initiative="Sports Talent" id="statCardSports">
+        <div class="stat-icon bg-green-subtle text-green">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">4. Sports Talent</span>
+          <h2 class="stat-value" id="statSportsCount">0</h2>
+        </div>
+        <div class="stat-indicator">Youth &amp; Athletics</div>
+      </div>
+    </section>
+
+    <!-- Filter & Toolbar Section -->
+    <section class="toolbar-card">
+      <div class="toolbar-left">
+        <!-- Prominent Initiative Dropdown Filter -->
+        <div class="filter-group">
+          <label for="initiativeFilter" class="filter-label">
+            <i class="fa-solid fa-filter"></i> Filter by Initiative:
+          </label>
+          <div class="select-wrapper">
+            <select id="initiativeFilter" class="custom-select">
+              <option value="All">✨ All Initiatives</option>
+              <option value="Apne Apne Ram">🚩 1. Apne Apne Ram</option>
+              <option value="Diwali Event">🪔 2. Diwali Event</option>
+              <option value="Khatu Shyam">🙏 3. Khatu Shyam</option>
+              <option value="Sports Talent">🏆 4. Sports Talent</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-chevron"></i>
+          </div>
+        </div>
+
+        <!-- Live Search Input -->
+        <div class="search-group">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search by Name, Contact, Address..." 
+            autocomplete="off"
+          />
+          <button id="clearSearchBtn" class="clear-search-btn" title="Clear Search">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="toolbar-right">
+        <!-- Sort Dropdown -->
+        <div class="sort-group">
+          <label for="sortBy" class="sort-label">Sort:</label>
+          <select id="sortBy" class="custom-select-small">
+            <option value="createdAt_desc">Newest First</option>
+            <option value="createdAt_asc">Oldest First</option>
+            <option value="name_asc">Name (A-Z)</option>
+            <option value="name_desc">Name (Z-A)</option>
+            <option value="initiative_asc">Initiative</option>
+          </select>
+        </div>
+
+        <!-- Export CSV Button -->
+        <button id="exportCsvBtn" class="btn btn-secondary" title="Export current dataset to CSV">
+          <i class="fa-solid fa-file-csv"></i>
+          <span>Export CSV</span>
+        </button>
+
+        <!-- Reset Seed Data Button -->
+        <button id="resetDataBtn" class="btn btn-outline" title="Reset sample records">
+          <i class="fa-solid fa-rotate-right"></i>
+          <span>Reset Sample</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Active Filter Badges Bar -->
+    <div class="active-filter-bar" id="activeFilterBar">
+      <div class="filter-tag">
+        <span id="activeFilterText">Showing: All Initiatives</span>
+        <span class="count-badge" id="resultsCountBadge">0 records</span>
+      </div>
+      <button id="clearAllFiltersBtn" class="link-btn" style="display: none;">Reset Filters</button>
+    </div>
+
+    <!-- Data Table Card -->
+    <section class="table-container">
+      <div class="table-responsive">
+        <table class="data-table" id="membersTable">
+          <thead>
+            <tr>
+              <th style="width: 50px;">#</th>
+              <th>Member Name</th>
+              <th>Contact Details</th>
+              <th>Address</th>
+              <th>Initiative</th>
+              <th>Date Added</th>
+              <th style="text-align: right; width: 120px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Dynamically populated via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-icon">
+          <i class="fa-solid fa-folder-open"></i>
+        </div>
+        <h3>No matching records found</h3>
+        <p>No members match the current filter or search criteria.</p>
+        <button class="btn btn-primary" id="emptyStateResetBtn">Clear Filters</button>
+      </div>
+
+      <!-- Table Footer / Pagination -->
+      <div class="table-footer">
+        <div class="footer-info" id="paginationInfo">
+          Showing 1 to 10 of 13 entries
+        </div>
+        <div class="pagination-controls">
+          <button id="prevPageBtn" class="btn-page" disabled>
+            <i class="fa-solid fa-angle-left"></i> Previous
+          </button>
+          <div class="page-numbers" id="pageNumbers"></div>
+          <button id="nextPageBtn" class="btn-page">
+            Next <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add / Edit Member Modal -->
+  <div class="modal-overlay" id="recordModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <div class="modal-icon">
+            <i class="fa-solid fa-user-plus" id="modalIcon"></i>
+          </div>
+          <div>
+            <h2 id="modalTitle">Add New Member</h2>
+            <p class="modal-subtitle">Enter details to enroll into an initiative</p>
+          </div>
+        </div>
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+      </div>
+
+      <form id="recordForm" novalidate>
+        <input type="hidden" id="recordId" value="">
+
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="formName" class="form-label">
+            Full Name <span class="required">*</span>
+          </label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input 
+              type="text" 
+              id="formName" 
+              class="form-input" 
+              placeholder="e.g. Ramesh Kumar" 
+              required
+            />
+          </div>
+          <span class="field-error" id="nameError">Please enter a valid full name</span>
+        </div>
+
+        <!-- Contact Field -->
+        <div class="form-group">
+          <label for="formContact" class="form-label">
+            Contact Number / Email <span class="required">*</span>
+          </label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-phone input-icon"></i>
+            <input 
+              type="text" 
+              id="formContact" 
+              class="form-input" 
+              placeholder="e.g. +91 98765 43210 or name@domain.com" 
+              required
+            />
+          </div>
+          <span class="field-error" id="contactError">Please enter contact details (Phone or Email)</span>
+        </div>
+
+        <!-- Address Field -->
+        <div class="form-group">
+          <label for="formAddress" class="form-label">
+            Address <span class="required">*</span>
+          </label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-location-dot input-icon"></i>
+            <input 
+              type="text" 
+              id="formAddress" 
+              class="form-input" 
+              placeholder="e.g. 104 Civil Lines, Jaipur, Rajasthan" 
+              required
+            />
+          </div>
+          <span class="field-error" id="addressError">Please enter a valid address</span>
+        </div>
+
+        <!-- Initiative Dropdown Field (4 Initiatives) -->
+        <div class="form-group">
+          <label for="formInitiative" class="form-label">
+            Selected Initiative <span class="required">*</span>
+          </label>
+          <div class="select-wrapper">
+            <select id="formInitiative" class="form-select" required>
+              <option value="" disabled selected>-- Select an Initiative --</option>
+              <option value="Apne Apne Ram">🚩 1. Apne Apne Ram</option>
+              <option value="Diwali Event">🪔 2. Diwali Event</option>
+              <option value="Khatu Shyam">🙏 3. Khatu Shyam</option>
+              <option value="Sports Talent">🏆 4. Sports Talent</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-chevron"></i>
+          </div>
+          <span class="field-error" id="initiativeError">Please select an initiative</span>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveRecordBtn">
+            <i class="fa-solid fa-check"></i>
+            <span id="saveBtnText">Save Record</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal-card modal-small">
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <div class="modal-icon bg-red-subtle text-red">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+          <div>
+            <h2>Confirm Delete</h2>
+            <p class="modal-subtitle">Are you sure you want to remove this record?</p>
+          </div>
+        </div>
+        <button class="modal-close" id="closeDeleteModalBtn">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <p>This action will permanently delete <strong id="deleteTargetName"></strong> from the dashboard.</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+          <i class="fa-solid fa-trash"></i> Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
