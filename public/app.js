@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalIcon = document.getElementById('modalIcon');
   const saveBtnText = document.getElementById('saveBtnText');
-  const addRecordBtn = document.getElementById('addRecordBtn');
   const closeModalBtn = document.getElementById('closeModalBtn');
   const cancelModalBtn = document.getElementById('cancelModalBtn');
 
@@ -61,14 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const formContact = document.getElementById('formContact');
   const formAddress = document.getElementById('formAddress');
   const formInitiative = document.getElementById('formInitiative');
-  const formVoter = document.getElementById('formVoter');
-
-  // Delete Modal
-  const deleteModal = document.getElementById('deleteModal');
-  const deleteTargetName = document.getElementById('deleteTargetName');
-  const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
-  const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
-  const closeDeleteModalBtn = document.getElementById('closeDeleteModalBtn');
 
   // Buttons
   const exportCsvBtn = document.getElementById('exportCsvBtn');
@@ -334,18 +325,12 @@ document.addEventListener('DOMContentLoaded', () => {
           ${dupStatusHtml}
         </td>
         <td>
-          ${voterBadgeHtml}
-        </td>
-        <td>
           <span class="date-cell">${formatDate(rec.createdAt)}</span>
         </td>
-        <td>
+        <td style="text-align: right;">
           <div class="action-buttons">
             <button class="btn-icon edit" data-id="${rec.id}" title="Edit Member">
               <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-            <button class="btn-icon delete" data-id="${rec.id}" data-name="${escapeHtml(rec.name)}" title="Delete Member">
-              <i class="fa-solid fa-trash-can"></i>
             </button>
           </div>
         </td>
@@ -491,36 +476,9 @@ document.addEventListener('DOMContentLoaded', () => {
       openEditModal(id);
       return;
     }
-
-    const delBtn = e.target.closest('.btn-icon.delete');
-    if (delBtn) {
-      const id = delBtn.dataset.id;
-      const name = delBtn.dataset.name;
-      openDeleteModal(id, name);
-      return;
-    }
   });
 
   // Modal Functions
-  function openAddModal() {
-    state.isEditing = false;
-    modalTitle.textContent = 'Add New Member';
-    modalIcon.className = 'fa-solid fa-user-plus';
-    saveBtnText.textContent = 'Save Record';
-
-    recordForm.reset();
-    recordIdInput.value = '';
-    formVoter.value = 'No';
-    clearFormErrors();
-
-    if (state.selectedInitiative !== 'All') {
-      formInitiative.value = state.selectedInitiative;
-    }
-
-    recordModal.classList.add('open');
-    setTimeout(() => formName.focus(), 100);
-  }
-
   function openEditModal(id) {
     const rec = state.records.find(r => r.id === id);
     if (!rec) return;
@@ -535,7 +493,6 @@ document.addEventListener('DOMContentLoaded', () => {
     formContact.value = rec.contact;
     formAddress.value = rec.address;
     formInitiative.value = rec.initiative;
-    formVoter.value = rec.voter || 'No';
 
     clearFormErrors();
     recordModal.classList.add('open');
@@ -550,23 +507,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.form-group').forEach(fg => fg.classList.remove('has-error'));
   }
 
-  addRecordBtn.addEventListener('click', openAddModal);
   closeModalBtn.addEventListener('click', closeModal);
   cancelModalBtn.addEventListener('click', closeModal);
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeModal();
-      closeDeleteModal();
     }
   });
 
   recordModal.addEventListener('click', (e) => {
     if (e.target === recordModal) closeModal();
-  });
-
-  deleteModal.addEventListener('click', (e) => {
-    if (e.target === deleteModal) closeDeleteModal();
   });
 
   // Form Submission
@@ -578,7 +529,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const contact = formContact.value.trim();
     const address = formAddress.value.trim();
     const initiative = formInitiative.value;
-    const voter = formVoter.value;
 
     let hasError = false;
     if (!name) {
@@ -600,80 +550,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hasError) return;
 
-    const payload = { name, contact, address, initiative, voter };
+    const payload = { name, contact, address, initiative };
     const id = recordIdInput.value;
 
     try {
-      let res;
-      if (state.isEditing && id) {
-        res = await fetch(`/api/records/${id}`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-      } else {
-        res = await fetch('/api/records', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-      }
+      if (!id) return;
+      const res = await fetch(`/api/records/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
 
       const data = await res.json();
       if (data.success) {
-        const isDup = data.record && data.record.isDuplicate;
-        showToast(
-          state.isEditing 
-            ? `Updated "${name}" successfully!` 
-            : `Added "${name}" to ${initiative}! ${isDup ? '⚠️ (Duplicate Phone Flagged)' : ''}`,
-          isDup ? 'info' : 'success'
-        );
+        showToast(`Updated "${name}" successfully!`, 'success');
         closeModal();
         await fetchStats();
         await fetchRecords();
       } else {
-        showToast(data.error || 'Failed to save record', 'error');
+        showToast(data.error || 'Failed to update record', 'error');
       }
     } catch (err) {
       console.error('Error saving record:', err);
       showToast('Error saving record to server', 'error');
-    }
-  });
-
-  // Delete Handlers
-  function openDeleteModal(id, name) {
-    state.deleteTargetId = id;
-    deleteTargetName.textContent = name;
-    deleteModal.classList.add('open');
-  }
-
-  function closeDeleteModal() {
-    deleteModal.classList.remove('open');
-    state.deleteTargetId = null;
-  }
-
-  closeDeleteModalBtn.addEventListener('click', closeDeleteModal);
-  cancelDeleteBtn.addEventListener('click', closeDeleteModal);
-
-  confirmDeleteBtn.addEventListener('click', async () => {
-    if (!state.deleteTargetId) return;
-
-    try {
-      const res = await fetch(`/api/records/${state.deleteTargetId}`, {
-        method: 'DELETE'
-      });
-      const data = await res.json();
-      if (data.success) {
-        showToast('Record deleted successfully', 'success');
-        closeDeleteModal();
-        await fetchStats();
-        await fetchRecords();
-      } else {
-        showToast(data.error || 'Failed to delete record', 'error');
-      }
-    } catch (err) {
-      console.error('Error deleting record:', err);
-      showToast('Error deleting record from server', 'error');
     }
   });
 

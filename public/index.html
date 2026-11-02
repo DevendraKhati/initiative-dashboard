@@ -25,12 +25,7 @@
           <span class="subtext">Community, Distribution &amp; Event Portal</span>
         </div>
       </div>
-      <div class="header-actions">
-        <button id="addRecordBtn" class="btn btn-primary">
-          <i class="fa-solid fa-plus"></i>
-          <span>Add Member</span>
-        </button>
-      </div>
+      <div class="header-actions"></div>
     </div>
   </header>
 
@@ -204,9 +199,8 @@
               <th>Address</th>
               <th>Initiative</th>
               <th>Phone Duplicacy</th>
-              <th>Voter</th>
               <th>Date Added</th>
-              <th style="text-align: right; width: 100px;">Actions</th>
+              <th style="text-align: right; width: 60px;">Edit</th>
             </tr>
           </thead>
           <tbody id="tableBody">
@@ -335,54 +329,15 @@
           <span class="field-error" id="initiativeError">Please select an initiative</span>
         </div>
 
-        <!-- Voter Field -->
-        <div class="form-group">
-          <label for="formVoter" class="form-label">Voter Status</label>
-          <div class="select-wrapper">
-            <select id="formVoter" class="form-select">
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
-            <i class="fa-solid fa-chevron-down select-chevron"></i>
-          </div>
-        </div>
-
         <!-- Modal Actions -->
         <div class="modal-actions">
           <button type="button" class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
           <button type="submit" class="btn btn-primary" id="saveRecordBtn">
             <i class="fa-solid fa-check"></i>
-            <span id="saveBtnText">Save Record</span>
+            <span id="saveBtnText">Save Changes</span>
           </button>
         </div>
       </form>
-    </div>
-  </div>
-
-  <!-- Delete Confirmation Modal -->
-  <div class="modal-overlay" id="deleteModal">
-    <div class="modal-card modal-small">
-      <div class="modal-header">
-        <div class="modal-title-wrapper">
-          <div class="modal-icon bg-red-subtle text-red">
-            <i class="fa-solid fa-trash-can"></i>
-          </div>
-          <div>
-            <h2>Confirm Delete</h2>
-            <p class="modal-subtitle">Are you sure you want to remove this record?</p>
-          </div>
-        </div>
-        <button class="modal-close" id="closeDeleteModalBtn">&times;</button>
-      </div>
-      <div class="modal-body-content">
-        <p>This action will permanently delete <strong id="deleteTargetName"></strong> from the dashboard.</p>
-      </div>
-      <div class="modal-actions">
-        <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
-        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
-          <i class="fa-solid fa-trash"></i> Delete
-        </button>
-      </div>
     </div>
   </div>
 
