@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'data', 'records.json');
 const SEED_FILE = path.join(__dirname, 'data', 'seed.json');
 
-// Core Initiatives (Now 5 including Gift Distribution)
+// Core Initiatives (5 Initiatives)
 const INITIATIVES = [
   'Apne Apne Ram',
   'Diwali Event',
@@ -24,61 +24,47 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Dynamic duplicate detection logic
+// Duplicate detection logic - PHONE NUMBER IS PRIMARY (Names can be shared/duplicate)
 function computeDuplicates(records) {
-  const phoneMap = new Map();
-  const nameMap = new Map();
-  const exactMap = new Map();
+  // 1. Filter out empty contact records ("filters mei se empte hta do")
+  records = records.filter(r => {
+    if (!r.contact) return false;
+    const clean = r.contact.replace(/[^0-9]/g, '');
+    if (r.contact === 'Not Provided' || clean.length < 5) return false;
+    return true;
+  });
 
+  // 2. Group by clean phone number
+  const phoneMap = new Map();
   records.forEach(r => {
     const cleanPhone = (r.contact || '').replace(/[^0-9]/g, '');
-    const cleanName = (r.name || '').trim().toLowerCase();
-
-    if (cleanPhone && cleanPhone.length >= 7) {
+    if (cleanPhone.length >= 7) {
       if (!phoneMap.has(cleanPhone)) phoneMap.set(cleanPhone, []);
       phoneMap.get(cleanPhone).push(r);
     }
-
-    if (cleanName) {
-      if (!nameMap.has(cleanName)) nameMap.set(cleanName, []);
-      nameMap.get(cleanName).push(r);
-    }
-
-    const exactKey = cleanName + '||' + cleanPhone;
-    if (!exactMap.has(exactKey)) exactMap.set(exactKey, []);
-    exactMap.get(exactKey).push(r);
   });
 
+  // 3. Flag records based SOLELY on duplicate phone number
   records.forEach(r => {
     const cleanPhone = (r.contact || '').replace(/[^0-9]/g, '');
-    const cleanName = (r.name || '').trim().toLowerCase();
-    const exactKey = cleanName + '||' + cleanPhone;
+    const matches = cleanPhone.length >= 7 ? (phoneMap.get(cleanPhone) || []) : [];
 
-    const phoneMatches = (cleanPhone && cleanPhone.length >= 7) ? phoneMap.get(cleanPhone) : [];
-    const nameMatches = cleanName ? nameMap.get(cleanName) : [];
-    const exactMatches = exactMap.get(exactKey) || [];
+    if (matches.length > 1) {
+      r.isDuplicate = true;
+      r.duplicateFields = ['contact'];
+      const others = matches
+        .filter(m => m.id !== r.id)
+        .map(m => m.name)
+        .slice(0, 3)
+        .join(', ');
 
-    const isExactDup = exactMatches.length > 1;
-    const isPhoneDup = phoneMatches.length > 1;
-    const isNameDup = nameMatches.length > 1;
-
-    r.isDuplicate = isExactDup || isPhoneDup || isNameDup;
-    r.duplicateFields = [];
-    r.duplicateReasons = [];
-
-    if (isExactDup) {
-      r.duplicateFields.push('exact', 'name', 'contact');
-      r.duplicateReasons.push(`Exact Duplicate: Name & Contact appears ${exactMatches.length} times`);
+      r.duplicateReasons = [
+        `Duplicate Phone: ${r.contact} appears ${matches.length} times (registered by: ${others || (matches.length - 1) + ' others'})`
+      ];
     } else {
-      if (isPhoneDup) {
-        r.duplicateFields.push('contact');
-        const others = phoneMatches.filter(o => o.id !== r.id).map(o => o.name).slice(0, 2).join(', ');
-        r.duplicateReasons.push(`Duplicate Contact: ${r.contact} shared with ${others || (phoneMatches.length - 1) + ' others'}`);
-      }
-      if (isNameDup) {
-        r.duplicateFields.push('name');
-        r.duplicateReasons.push(`Duplicate Name: "${r.name}" appears ${nameMatches.length} times`);
-      }
+      r.isDuplicate = false;
+      r.duplicateFields = [];
+      r.duplicateReasons = [];
     }
   });
 
@@ -157,7 +143,7 @@ app.get('/api/stats', (req, res) => {
   });
 });
 
-// 3. Get Records with Filter, Search, Duplicates Filter, and Sort
+// 3. Get Records with Filters (Excluding empty, Phone-only duplicates)
 app.get('/api/records', (req, res) => {
   let records = readRecords();
   const { initiative, search, duplicateFilter = 'all', sortBy = 'createdAt', sortOrder = 'desc' } = req.query;
@@ -216,7 +202,7 @@ app.post('/api/records', (req, res) => {
     return res.status(400).json({ success: false, error: 'Name is required' });
   }
   if (!contact || !contact.trim()) {
-    return res.status(400).json({ success: false, error: 'Contact details are required' });
+    return res.status(400).json({ success: false, error: 'Contact number is required' });
   }
   if (!address || !address.trim()) {
     return res.status(400).json({ success: false, error: 'Address is required' });
@@ -324,7 +310,7 @@ app.post('/api/reset', (req, res) => {
 // 8. Export CSV Endpoint
 app.get('/api/export/csv', (req, res) => {
   const records = readRecords();
-  const header = ['ID', 'Name', 'Contact', 'Address', 'Initiative', 'Voter', 'Is Duplicate', 'Duplicate Reason', 'Created At'];
+  const header = ['ID', 'Name', 'Contact', 'Address', 'Initiative', 'Voter', 'Phone Duplicate', 'Duplicate Reason', 'Created At'];
   const rows = records.map(r => [
     `"${r.id}"`,
     `"${(r.name || '').replace(/"/g, '""')}"`,

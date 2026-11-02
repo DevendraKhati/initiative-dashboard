@@ -1,4 +1,4 @@
-// Initiative Central Dashboard - Frontend Logic with Duplicate Detection & Highlighting
+// Initiative Central Dashboard - Frontend Logic (Phone-Only Duplicate Detection & No Empty Records)
 
 document.addEventListener('DOMContentLoaded', () => {
   // Application State
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Fetch Records with current filter, search & sort
+  // Fetch Records with current filter, search & sort (Excluding empty contacts)
   async function fetchRecords() {
     try {
       const params = new URLSearchParams({
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsCountBadge.textContent = `${count} ${count === 1 ? 'record' : 'records'}`;
 
     const duplicatesInView = state.records.filter(r => r.isDuplicate).length;
-    duplicatesCountBadge.textContent = `${duplicatesInView} ${duplicatesInView === 1 ? 'duplicate' : 'duplicates'}`;
+    duplicatesCountBadge.textContent = `${duplicatesInView} duplicate phones`;
     duplicatesCountBadge.style.display = duplicatesInView > 0 ? 'inline-block' : 'none';
 
     let isFiltered = false;
@@ -168,10 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (state.duplicateFilter === 'duplicates_only') {
-      label += ' (Duplicates Only)';
+      label += ' (Duplicate Phones Only)';
       isFiltered = true;
     } else if (state.duplicateFilter === 'unique_only') {
-      label += ' (Unique Only)';
+      label += ' (Unique Phones Only)';
       isFiltered = true;
     }
 
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/'/g, '&#039;');
   }
 
-  // Render Table Rows with Pagination & Duplicate Highlighting
+  // Render Table Rows with Pagination & Phone-Only Duplicate Highlighting
   function renderTable() {
     tableBody.innerHTML = '';
 
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const endIdx = Math.min(startIdx + state.pageSize, totalRecords);
     const paginatedRecords = state.records.slice(startIdx, endIdx);
 
-    paginatedRecords.forEach((rec, idx) => {
+    paginatedRecords.forEach((rec) => {
       const tr = document.createElement('tr');
       if (rec.isDuplicate) {
         tr.classList.add('row-duplicate');
@@ -254,12 +254,11 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       const initials = getInitials(rec.name);
-      const isContactDup = rec.duplicateFields && rec.duplicateFields.includes('contact');
-      const isNameDup = rec.duplicateFields && rec.duplicateFields.includes('name');
+      const isPhoneDup = rec.isDuplicate && rec.duplicateFields && rec.duplicateFields.includes('contact');
 
-      // Contact cell with duplicate highlight
+      // Contact cell with Phone-Only Duplicate Highlight
       let contactHtml = '';
-      if (isContactDup) {
+      if (isPhoneDup) {
         contactHtml = `
           <div class="dup-contact-box" title="⚠️ Duplicate Phone Number: ${escapeHtml(rec.contact)}">
             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -275,20 +274,14 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
-      // Name cell with duplicate badge if name repeats
-      let nameBadgesHtml = '';
-      if (isNameDup) {
-        nameBadgesHtml = `<span class="dup-badge-name" title="⚠️ Duplicate Name"><i class="fa-solid fa-triangle-exclamation"></i> Dup Name</span>`;
-      }
-
-      // Duplicate Status Column
+      // Duplicacy Status Column (Phone is Primary)
       let dupStatusHtml = '';
       if (rec.isDuplicate) {
-        const reason = (rec.duplicateReasons && rec.duplicateReasons[0]) ? rec.duplicateReasons[0] : 'Duplicate Entry';
+        const reason = (rec.duplicateReasons && rec.duplicateReasons[0]) ? rec.duplicateReasons[0] : 'Duplicate Phone';
         dupStatusHtml = `
           <div class="dup-status-badge">
             <span class="pill-duplicate" title="${escapeHtml(reason)}">
-              <i class="fa-solid fa-triangle-exclamation"></i> Duplicate
+              <i class="fa-solid fa-triangle-exclamation"></i> Duplicate Phone
             </span>
             <span class="dup-reason-text">${escapeHtml(reason)}</span>
           </div>
@@ -296,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         dupStatusHtml = `
           <span class="pill-unique">
-            <i class="fa-solid fa-circle-check"></i> Unique
+            <i class="fa-solid fa-circle-check"></i> Unique Phone
           </span>
         `;
       }
@@ -313,17 +306,14 @@ document.addEventListener('DOMContentLoaded', () => {
         </td>
         <td>
           <div class="member-info">
-            <div class="member-name-row">
-              <span class="member-name">${escapeHtml(rec.name)}</span>
-              ${nameBadgesHtml}
-            </div>
+            <span class="member-name">${escapeHtml(rec.name)}</span>
             <span class="member-id">${rec.id}</span>
           </div>
         </td>
         <td>
           <div class="contact-cell">
             ${contactHtml}
-            <button class="copy-btn" data-copy="${escapeHtml(rec.contact)}" title="Copy Contact">
+            <button class="copy-btn" data-copy="${escapeHtml(rec.contact)}" title="Copy Phone">
               <i class="fa-regular fa-copy"></i>
             </button>
           </div>
@@ -635,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast(
           state.isEditing 
             ? `Updated "${name}" successfully!` 
-            : `Added "${name}" to ${initiative}! ${isDup ? '⚠️ (Marked as Duplicate)' : ''}`,
+            : `Added "${name}" to ${initiative}! ${isDup ? '⚠️ (Duplicate Phone Flagged)' : ''}`,
           isDup ? 'info' : 'success'
         );
         closeModal();
@@ -690,7 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Export CSV
   exportCsvBtn.addEventListener('click', () => {
     window.location.href = '/api/export/csv';
-    showToast('Downloading CSV export with duplicate & voter flags...', 'info');
+    showToast('Downloading CSV export with duplicate phone flags...', 'info');
   });
 
   // Reset Sample Data
