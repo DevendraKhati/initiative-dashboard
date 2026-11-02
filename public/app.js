@@ -642,10 +642,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Export CSV
+  // Export CSV (Handles both server mode and standalone/file mode)
   exportCsvBtn.addEventListener('click', () => {
-    window.location.href = '/api/export/csv';
-    showToast('Downloading CSV export with duplicate phone flags...', 'info');
+    if (window.location.protocol.startsWith('http') && !window.__INITIAL_RECORDS__) {
+      window.location.href = '/api/export/csv';
+      showToast('Downloading CSV export with duplicate phone flags...', 'info');
+      return;
+    }
+
+    // Client-side CSV export for standalone / file / GitHub Pages mode
+    const recordsToExport = state.records && state.records.length ? state.records : (window.__INITIAL_RECORDS__ || []);
+    const header = ['ID', 'Name', 'Contact', 'Residential Address', 'Bus Stand / Details', 'Preferred Friday', 'Age', 'Gender', 'Initiative', 'Phone Duplicate', 'Duplicate Reason', 'Created At'];
+    const rows = recordsToExport.map(r => [
+      `"${r.id}"`,
+      `"${(r.name || '').replace(/"/g, '""')}"`,
+      `"${(r.contact || '').replace(/"/g, '""')}"`,
+      `"${(r.address || '').replace(/"/g, '""')}"`,
+      `"${(r.busStand || r.details || '').replace(/"/g, '""')}"`,
+      `"${(r.preferredFriday || '').replace(/"/g, '""')}"`,
+      `"${(r.age || '').replace(/"/g, '""')}"`,
+      `"${(r.gender || '').replace(/"/g, '""')}"`,
+      `"${(r.initiative || '').replace(/"/g, '""')}"`,
+      `"${r.isDuplicate ? 'YES' : 'NO'}"`,
+      `"${(r.duplicateReasons || []).join('; ').replace(/"/g, '""')}"`,
+      `"${r.createdAt}"`
+    ]);
+
+    const csvContent = '\uFEFF' + [header.join(','), ...rows.map(row => row.join(','))].join('\r\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `initiatives_export_${state.selectedInitiative.replace(/\s+/g, '_')}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    showToast(`Downloaded CSV (${recordsToExport.length} records)`, 'success');
   });
 
   // Reset Sample Data

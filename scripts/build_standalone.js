@@ -18,27 +18,51 @@ const standaloneAdapter = `
   window.__INITIAL_RECORDS__ = ${JSON.stringify(records)};
 </script>
 <script>
-  // LocalStorage Standalone Adapter for GitHub Pages / Offline Preview
+  // LocalStorage Standalone Adapter for GitHub Pages / Offline / File Preview
   (function() {
-    const STORAGE_KEY = 'initiative_dashboard_v4_store';
+    const DATA_VERSION = 'v5_ram_khatu_gift_5065';
+    const STORAGE_KEY = 'initiative_dashboard_data_' + DATA_VERSION;
+
     function getStore() {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (!stored) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(window.__INITIAL_RECORDS__));
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (!stored) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(window.__INITIAL_RECORDS__));
+          return window.__INITIAL_RECORDS__;
+        }
+        const parsed = JSON.parse(stored);
+        if (!Array.isArray(parsed) || parsed.length !== window.__INITIAL_RECORDS__.length) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(window.__INITIAL_RECORDS__));
+          return window.__INITIAL_RECORDS__;
+        }
+        return parsed;
+      } catch (e) {
         return window.__INITIAL_RECORDS__;
       }
-      try { return JSON.parse(stored); } catch { return window.__INITIAL_RECORDS__; }
     }
+
     function saveStore(data) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch (e) {
+        console.warn('LocalStorage save failed:', e);
+      }
     }
 
     // Intercept fetch for standalone mode
     const originalFetch = window.fetch;
     window.fetch = async function(url, options) {
-      const urlStr = url.toString();
+      const urlStr = (url || '').toString();
 
-      if (urlStr.startsWith('/api/stats')) {
+      // Ensure base URL works safely on file:// where window.location.origin is 'null'
+      let baseOrigin = 'http://localhost:3000';
+      try {
+        if (window.location && window.location.origin && window.location.origin !== 'null' && window.location.protocol.startsWith('http')) {
+          baseOrigin = window.location.origin;
+        }
+      } catch (e) {}
+
+      if (urlStr.includes('/api/stats')) {
         const data = getStore();
         const byInitiative = {
           'Apne Apne Ram': 0,
@@ -54,6 +78,7 @@ const standaloneAdapter = `
         });
         return {
           ok: true,
+          status: 200,
           json: async () => ({
             success: true,
             stats: {
@@ -66,8 +91,8 @@ const standaloneAdapter = `
         };
       }
 
-      if (urlStr.startsWith('/api/records')) {
-        const u = new URL(urlStr, window.location.origin);
+      if (urlStr.includes('/api/records')) {
+        const u = new URL(urlStr, baseOrigin);
         const init = u.searchParams.get('initiative') || 'All';
         const dupFilter = u.searchParams.get('duplicateFilter') || 'all';
         const q = (u.searchParams.get('search') || '').trim().toLowerCase();
@@ -112,7 +137,7 @@ const standaloneAdapter = `
 
         // Handle PUT (Update record)
         if (options && options.method === 'PUT') {
-          const match = urlStr.match(/\\/api\\/records\\/([^?]+)/);
+          const match = urlStr.match(/\/api\/records\/([^?]+)/);
           const updateId = match ? match[1] : null;
           const body = JSON.parse(options.body);
           const all = getStore();
@@ -125,12 +150,13 @@ const standaloneAdapter = `
             if (body.details !== undefined) target.details = body.details;
             if (body.initiative) target.initiative = body.initiative;
             saveStore(all);
-            return { ok: true, json: async () => ({ success: true, record: target }) };
+            return { ok: true, status: 200, json: async () => ({ success: true, record: target }) };
           }
         }
 
         return {
           ok: true,
+          status: 200,
           json: async () => ({
             success: true,
             total: list.length,
@@ -139,12 +165,23 @@ const standaloneAdapter = `
         };
       }
 
-      if (urlStr.startsWith('/api/reset')) {
+      if (urlStr.includes('/api/reset')) {
         saveStore(window.__INITIAL_RECORDS__);
-        return { ok: true, json: async () => ({ success: true }) };
+        return { ok: true, status: 200, json: async () => ({ success: true }) };
       }
 
-      return originalFetch(url, options);
+      // If running on a live server, fall back to native fetch
+      if (typeof originalFetch === 'function' && window.location.protocol.startsWith('http')) {
+        try {
+          return await originalFetch(url, options);
+        } catch (e) {}
+      }
+
+      return {
+        ok: false,
+        status: 404,
+        json: async () => ({ success: false, error: 'Endpoint not found in standalone mode' })
+      };
     };
   })();
 </script>
@@ -157,4 +194,4 @@ standalone = standalone.replace('<script src="app.js"></script>', standaloneAdap
 
 fs.writeFileSync(path.join(projectRoot, 'Initiative_Dashboard_Standalone.html'), standalone);
 fs.writeFileSync(path.join(projectRoot, 'index.html'), standalone);
-console.log('Standalone and root index.html generated successfully!');
+console.log('Standalone and root index.html generated successfully with safe URL and cache invalidation!');
